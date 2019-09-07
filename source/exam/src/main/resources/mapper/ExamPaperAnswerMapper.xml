@@ -33,7 +33,7 @@
     delete from t_exam_paper_answer
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.alvis.exam.domain.ExamPaperAnswer"  useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="com.alvis.exam.domain.ExamPaperAnswer" useGeneratedKeys="true" keyProperty="id">
     insert into t_exam_paper_answer (id, exam_paper_id, paper_name,
       paper_type, subject_id, system_score,
       user_score, paper_score, question_correct,
@@ -47,7 +47,7 @@
       #{createUser,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{taskExamId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.alvis.exam.domain.ExamPaperAnswer"  useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.alvis.exam.domain.ExamPaperAnswer" useGeneratedKeys="true" keyProperty="id">
     insert into t_exam_paper_answer
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

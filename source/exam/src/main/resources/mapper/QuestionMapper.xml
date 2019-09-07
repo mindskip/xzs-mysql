@@ -29,7 +29,7 @@
     delete from t_question
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.alvis.exam.domain.Question"  useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="com.alvis.exam.domain.Question" useGeneratedKeys="true" keyProperty="id">
     insert into t_question (id, question_type, subject_id,
       score, grade_level, difficult,
       correct, info_text_content_id, create_user,
@@ -41,7 +41,7 @@
       #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.alvis.exam.domain.Question"  useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.alvis.exam.domain.Question" useGeneratedKeys="true" keyProperty="id">
     insert into t_question
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -183,7 +183,7 @@
     <include refid="Base_Column_List"/>
     FROM t_question
     <where>
-        and deleted='f'
+        and deleted=1
       <if test="id != null ">
         and id= #{id}
       </if>
@@ -213,14 +213,14 @@
 
 
   <select id="selectAllCount"  resultType="java.lang.Integer">
-		SELECT count(*) from t_question where  deleted='f'
+		SELECT count(*) from t_question where  deleted=1
 	</select>
 
   <select id="selectCountByDate"  resultType="com.alvis.exam.domain.other.KeyValue">
 		SELECT create_time as name,COUNT(create_time) as value from
 		        (
 				  SELECT to_char(create_time,'YYYY-mm-dd') as create_time from t_question
-					WHERE  deleted='f' and  create_time  between  #{startTime}  and  #{endTime}
+					WHERE  deleted=1  and  create_time  between  #{startTime}  and  #{endTime}
 				) a
 		GROUP BY create_time
 	</select>

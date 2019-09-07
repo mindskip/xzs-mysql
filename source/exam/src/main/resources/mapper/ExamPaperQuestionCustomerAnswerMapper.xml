@@ -33,7 +33,7 @@
     delete from t_exam_paper_question_customer_answer
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.alvis.exam.domain.ExamPaperQuestionCustomerAnswer"  useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="com.alvis.exam.domain.ExamPaperQuestionCustomerAnswer" useGeneratedKeys="true" keyProperty="id">
     insert into t_exam_paper_question_customer_answer (id, question_id, exam_paper_id,
       exam_paper_answer_id, question_type, subject_id,
       customer_score, question_score, question_text_content_id,
@@ -47,7 +47,7 @@
       #{createUser,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{itemOrder,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.alvis.exam.domain.ExamPaperQuestionCustomerAnswer"  useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.alvis.exam.domain.ExamPaperQuestionCustomerAnswer" useGeneratedKeys="true" keyProperty="id">
     insert into t_exam_paper_question_customer_answer
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
