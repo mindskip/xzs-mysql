@@ -14,7 +14,7 @@
         </commentGenerator>
 
         <!-- jdbc -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://101.132.110.182:3306/exam"
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://101.132.110.182:3306/exam?useSSL=false"
                         userId="root" password="root123">
         </jdbcConnection>
 
@@ -24,20 +24,20 @@
 
         <!-- domain -->
         <javaModelGenerator targetPackage="com.alvis.exam.domain"
-                            targetProject="E:\private\exam\source\exam\src\main\java\">
+                            targetProject="E:\private\exam-mysql\source\exam\src\main\java\">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- mapper xml -->
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="E:\private\exam\source\exam\src\main\resources\">
+                         targetProject="E:\private\exam-mysql\source\exam\src\main\resources\">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- repository -->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.alvis.exam.repository"
-                             targetProject="E:\private\exam\source\exam\src\main\java\">
+                             targetProject="E:\private\exam-mysql\source\exam\src\main\java\">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
