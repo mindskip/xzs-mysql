@@ -166,7 +166,7 @@
 
   <update id="readAdd" parameterType="java.lang.Integer">
       UPDATE t_message SET read_count = read_count + 1
-      WHERE id= #{id} and read_count = ( SELECT read_count from t_message WHERE id= #{id} )
+      WHERE id= #{id} and read_count = (SELECT m.read_count from ( SELECT read_count FROM t_message WHERE id = #{id} ) m)
   </update>
 
 </mapper>
