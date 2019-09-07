@@ -250,7 +250,7 @@
   <select id="getAllUser" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
-    from t_user where deleted=1
+    from t_user where deleted=0
   </select>
 
   <select id="getUserById" resultMap="BaseResultMap">
@@ -264,21 +264,21 @@
     select
     <include refid="Base_Column_List"/>
     from t_user
-    where deleted=1  and user_name=#{value} limit 1
+    where deleted=0  and user_name=#{value} limit 1
   </select>
 
   <select id="getUserByUserNamePwd" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from t_user
-    where deleted=1  and user_name=#{username} and password=#{pwd} limit 1
+    where deleted=0  and user_name=#{username} and password=#{pwd} limit 1
   </select>
 
   <select id="getUserByUuid" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"/>
     from t_user
-    where deleted=1  and user_uuid=#{value,jdbcType=VARCHAR}
+    where deleted=0  and user_uuid=#{value,jdbcType=VARCHAR}
   </select>
 
 
@@ -287,7 +287,7 @@
     <include refid="Base_Column_List"/>
     FROM t_user
     <where>
-        and deleted=1
+        and deleted=0
       <if test="name != null and name != ''">
         and  real_name like concat('%',#{name},'%')
       </if>
@@ -303,7 +303,7 @@
   <select id="userPageCount" resultType="java.lang.Integer">
     select count(*) from t_user
     <where>
-        and deleted=1
+        and deleted=0
       <if test="name != null and name != ''">
         and real_name like concat('%', #{name}, '%')
       </if>
@@ -316,7 +316,7 @@
     <include refid="Base_Column_List"/>
     FROM t_user
     <where>
-        and deleted=1
+        and deleted=0
       <if test="userName != null and userName != ''">
         and user_name like concat('%',#{userName},'%')
       </if>
@@ -378,14 +378,14 @@
   </delete>
 
   <select id="selectAllCount"  resultType="java.lang.Integer">
-		SELECT count(*) from t_user where deleted=1
+		SELECT count(*) from t_user where deleted=0
   </select>
 
 
   <select id="selectByUserName"  resultType="com.alvis.exam.domain.other.KeyValue">
 		SELECT  id as value,user_name as name
 		from t_user
-		where deleted=1  and user_name like concat('%',#{value},'%')
+		where deleted=0  and user_name like concat('%',#{value},'%')
 		limit 5
   </select>
 
@@ -406,7 +406,7 @@
     select
     <include refid="Base_Column_List" />
     from t_user
-    where deleted=1  and  wx_open_id = #{wxOpenId}
+    where deleted=0  and  wx_open_id = #{wxOpenId}
     limit 1
   </select>
 

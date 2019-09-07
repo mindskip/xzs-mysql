@@ -42,7 +42,7 @@
         </javaClientGenerator>
 
 
-        <table tableName="t_user" domainObjectName="User" enableCountByExample="false"
+    <!--    <table tableName="t_user" domainObjectName="User" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
@@ -59,11 +59,6 @@
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
 
-
-        <table tableName="t_text_content" domainObjectName="TextContent" enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
 
 
         <table tableName="t_exam_paper" domainObjectName="ExamPaper" enableCountByExample="false"
@@ -84,10 +79,7 @@
         </table>
 
 
-        <table tableName="t_user_event_log" domainObjectName="UserEventLog" enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
+
 
         <table tableName="t_message" domainObjectName="Message" enableCountByExample="false"
                enableUpdateByExample="false"
@@ -111,21 +103,32 @@
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
 
-        <table tableName="t_knowledge" domainObjectName="Knowledge" enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
-
-        <table tableName="t_question_knowledge" domainObjectName="QuestionKnowledge" enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
-
         <table tableName="t_user_token" domainObjectName="UserToken" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
+-->
 
+
+        <table tableName="t_subject" domainObjectName="Subject" enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+
+        <table tableName="t_text_content" domainObjectName="TextContent" enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="content" jdbcType="VARCHAR" />
+        </table>
+
+
+
+        <table tableName="t_user_event_log" domainObjectName="UserEventLog" enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="content" jdbcType="VARCHAR" />
+        </table>
 
     </context>
 </generatorConfiguration>

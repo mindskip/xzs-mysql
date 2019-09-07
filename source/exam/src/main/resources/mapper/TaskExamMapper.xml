@@ -139,7 +139,7 @@
     <include refid="Base_Column_List" />
     from t_task_exam
     <where>
-        and deleted=1
+        and deleted=0
       <if test="gradeLevel != null">
         and grade_level = #{gradeLevel}
       </if>
@@ -151,7 +151,7 @@
     select
     <include refid="Base_Column_List" />
     from t_task_exam
-    where deleted=1
+    where deleted=0
     and grade_level = #{gradeLevel,jdbcType=INTEGER}
   </select>
 

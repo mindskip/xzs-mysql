@@ -183,7 +183,7 @@
     <include refid="Base_Column_List"/>
     FROM t_question
     <where>
-        and deleted=1
+        and deleted=0
       <if test="id != null ">
         and id= #{id}
       </if>
@@ -213,14 +213,14 @@
 
 
   <select id="selectAllCount"  resultType="java.lang.Integer">
-		SELECT count(*) from t_question where  deleted=1
+		SELECT count(*) from t_question where  deleted=0
 	</select>
 
   <select id="selectCountByDate"  resultType="com.alvis.exam.domain.other.KeyValue">
 		SELECT create_time as name,COUNT(create_time) as value from
 		        (
-				  SELECT to_char(create_time,'YYYY-mm-dd') as create_time from t_question
-					WHERE  deleted=1  and  create_time  between  #{startTime}  and  #{endTime}
+				  SELECT DATE_FORMAT(create_time,'%Y-%m-%d') as create_time from t_question
+					WHERE  deleted=0  and  create_time  between  #{startTime}  and  #{endTime}
 				) a
 		GROUP BY create_time
 	</select>
