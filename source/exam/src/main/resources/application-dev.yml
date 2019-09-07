@@ -1,0 +1,16 @@
+spring:
+  redis:
+    host: 101.132.110.182
+    password: 123456
+  datasource:
+    url: jdbc:postgresql://101.132.110.182:5432/exam
+    username: postgres
+    password: 123456
+
+system:
+  fdfs-ngix: http://101.132.110.182:8888
+
+fdfs:
+  tracker-list:
+    - 101.132.110.182:22122
+
