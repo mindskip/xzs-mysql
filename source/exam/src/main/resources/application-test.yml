@@ -2,9 +2,9 @@ spring:
   redis:
     host: localhost
   datasource:
-    url: jdbc:postgresql://localhost:5432/exam
-    username: postgres
-    password: 123456
+    url: jdbc:mysql://101.132.110.182:3306/exam
+    username: root
+    password: root123
 
 system:
   fdfs-ngix: http://localhost:8888
