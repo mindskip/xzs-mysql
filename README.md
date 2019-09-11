@@ -1,7 +1,7 @@
 # 学之思考试系统
 ![mit](doc/image/LICENSE/mit.svg)
 #### 介绍
-学之思考试系统是一款基于k12教育的考试平台，小学、初中、高中和不同学科均可以均可以使用，支持各种题型(单选、多选、判断、填空、解答)，里面包含了三大系统：学生系统、教师系统(TODO)、管理员系统、微信小程序学生考试系统。
+学之思考试系统是一款基于k12教育的考试平台，小学、初中、高中和不同学科均可以均可以使用，支持各种题型(单选、多选、判断、填空、解答)，里面包含了三大系统：学生系统、教师系统(TODO)、管理员系统、微信小程序学生考试系统
 
 演示地址:  
    1. https://www.alvisu.com       官网
@@ -12,10 +12,10 @@
 ![](doc/image/wx/code/1.jpg)
 
 源码地址：
-   1. https://gitee.com/alvis-yu/exam        gitte   postgresql版本
-   2. https://gitee.com/alvis-yu/exam-mysql  gitte   mysql版本
-   3. https://github.com/alvis-u/exam        github  postgresql版本
-   4. https://github.com/alvis-u/exam-mysql  github  mysql版本
+   1. https://gitee.com/alvis-yu/uexam       gitte   postgresql版本
+   2. https://gitee.com/alvis-yu/uexam-mysql  gitte   mysql版本
+   3. https://github.com/alvis-u/uexam        github  postgresql版本
+   4. https://github.com/alvis-u/uexam-mysql  github  mysql版本
 
 学生系统模块：
 * 登录、注册： 注册时要选年级，过滤不同年级的试卷， 账号为student/123456
@@ -57,7 +57,7 @@
 * redis 缓存，提升系统性能
 * mybatis 数据库中间件
 * hikari 速度最快的数据库连接池
-* fastdfs 文件系统中间件，需自行搭建，存放图片等文件
+* 七牛云存储 目前10G内免费
 
 前端技术栈列表：
 * Vue.js  采用新版，使用了vue-cli3搭建的系统，减少大量配置文件
@@ -71,11 +71,8 @@
 
 #### 安装教程
 1. redis 安装
-2. fastDfs 安装，[安装教程](https://blog.51cto.com/zhaobotao/2107094)，这里有2点需要注意下：
-   1. 单台机器部署 tracker_server 设置为ip地址，不要设置127.0.0.1或者localhost 
-   2. 先启动ngix,再启动fastDfs服务，不然端口会被占用
-3. postgresql/mysql 安装后执行/exam/database下的数据库脚本，创建表初始化数据
-4. 下载好源码，
+2. postgresql/mysql 安装后执行/exam/database下的数据库脚本，创建表初始化数据
+3. 下载好源码，
    1. /exam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql、redis、fdfs的服务地址，打开ExamApplication文件编译运行。
    2. /exam/source/vue下为学生端、管理员端的前端代码，建议使用JetBrains WebStorm打开，使用命令：npm run serve即可编译代码
 
@@ -119,7 +116,7 @@
 
 
 #### 后续更新计划
-* 小程序系统，学生在线做题 
+* 修复小程序bug
 * 完成扩展训练模块，错题本试卷扩展
 * 完成教师系统，统计图，试卷管理，试卷批改，学生管理，班级管理，班级试卷(推送试卷)
 
