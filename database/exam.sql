@@ -181,6 +181,7 @@ CREATE TABLE `t_subject`  (
   `level` int(11) NULL DEFAULT NULL COMMENT '年级 (1-12) 小学 初中 高中  大学',
   `level_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '一年级、二年级等',
   `item_order` int(11) NULL DEFAULT NULL COMMENT '排序',
+  `deleted` bit(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 68 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
