@@ -3,8 +3,13 @@
 ### 项目介绍
 学之思在线考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷,可水平拓展在多台服务器上做负载均衡。考试功能齐全，目前有web端和微信小程序，能覆盖到pc机和手机等设备。
 
+### 授权
+官网：[https://www.alvisu.com](https://www.alvisu.com) 
+
+学之思开源考试系统 使用 AGPLv3 开源，请遵守 AGPLv3 的相关条款，或者联系作者获取商业授权(https://www.alvisu.com)
+
 ### 演示地址
-##### 官网地址：[https://www.alvisu.com](https://www.alvisu.com) | 学生系统地址：[http://student.alvisu.com](http://student.alvisu.com) | 管理系统地址：[http://admin.alvisu.com](http://admin.alvisu.com)
+#####  学生系统地址：[http://student.alvisu.com](http://student.alvisu.com) | 管理系统地址：[http://admin.alvisu.com](http://admin.alvisu.com)
 
 ##### 小程序二维码
 ![](doc/image/wx/code/2.jpg)
@@ -16,7 +21,7 @@
 
 ### 学生系统功能
 * 登录、注册： 注册时要选年级，过滤不同年级的试卷， 账号为student/123456
-* 首页： 任务中心、固定试卷、时段试卷、推送试卷(TODO)，可以能做的一部分试卷
+* 首页： 任务中心、固定试卷、时段试卷、可以能做的一部分试卷
 * 试卷中心： 包含了所有能做的试卷，按学科来过滤和分页
 * 考试记录： 所有的试卷考试记录在此处分页，可以查看试卷结果、用时、得分、自行批改等
 * 错题本： 所有做错的题目，可以看到做题的结果、分数、难度、解析、正确答案等
@@ -117,5 +122,5 @@
 ### 学之思交流群
    QQ群：[![加入QQ群](https://img.shields.io/badge/530136203-blue.svg)](https://jq.qq.com/?_wv=1027&k=5xc9pvX)  点击链接加入群聊【学之思交流群】
 
-#### 喜欢的朋友请star一下！！
+#### 开源不易，喜欢的朋友请star一下，谢谢！！
      
