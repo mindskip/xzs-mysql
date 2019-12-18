@@ -2,6 +2,6 @@ spring:
   redis:
     host: 101.132.110.182
   datasource:
-    url: jdbc:mysql://101.132.110.182:3306/exam?useSSL=false
+    url: jdbc:mysql://101.132.110.182:3306/exam?useSSL=false&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
     password: root123
