@@ -1,3 +1,6 @@
+logging:
+  path: /usr/log/exam/
+
 server:
   ssl:
     key-store: /usr/local/exam/ssl/tomcat.jks
@@ -7,6 +10,6 @@ spring:
   redis:
     host: localhost
   datasource:
-    url: jdbc:mysql://localhost:3306/exam
+    url: jdbc:mysql://localhost:3306/exam?useSSL=false&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456

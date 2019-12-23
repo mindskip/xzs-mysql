@@ -1,13 +1,27 @@
 # 学之思在线考试系统
-![mit](doc/image/LICENSE/mit.svg)
+
 ### 项目介绍
 学之思在线考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷,可水平拓展在多台服务器上做负载均衡。考试功能齐全，目前有web端和微信小程序，能覆盖到pc机和手机等设备。
 
-### 演示地址
-##### 官网地址：[https://www.alvisu.com](https://www.alvisu.com) | 学生系统地址：[http://student.alvisu.com](http://student.alvisu.com) | 管理系统地址：[http://admin.alvisu.com](http://admin.alvisu.com)
+### 开源版使用须知
+允许用于个人学习、毕业设计、教学案例、公益事业;
 
-##### 小程序二维码
-![](doc/image/wx/code/2.jpg)
+开源版不适合商用，商用请购买商业版[https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html);
+
+禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
+
+授权介绍：[https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html)
+
+
+### 演示地址
+官网：[https://www.alvisu.com](https://www.alvisu.com)
+
+学之思：[https://www.alvisu.com/uexam.html](https://www.alvisu.com/uexam.html) 
+
+学多多：[https://www.alvisu.com/xdd.html](https://www.alvisu.com/xdd.html) 
+
+思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
+
 
 ### 衍生版本源码地址
 ##### gitee ：[postgresql](https://gitee.com/alvis-yu/uexam) | [mysql](https://gitee.com/alvis-yu/uexam-mysql)
@@ -16,7 +30,7 @@
 
 ### 学生系统功能
 * 登录、注册： 注册时要选年级，过滤不同年级的试卷， 账号为student/123456
-* 首页： 任务中心、固定试卷、时段试卷、推送试卷(TODO)，可以能做的一部分试卷
+* 首页： 任务中心、固定试卷、时段试卷、可以能做的一部分试卷
 * 试卷中心： 包含了所有能做的试卷，按学科来过滤和分页
 * 考试记录： 所有的试卷考试记录在此处分页，可以查看试卷结果、用时、得分、自行批改等
 * 错题本： 所有做错的题目，可以看到做题的结果、分数、难度、解析、正确答案等
@@ -70,7 +84,7 @@
 
 ### 安装教程
 1. redis 安装
-2. postgresql/mysql 安装后执行/exam/database下的数据库脚本，创建表初始化数据
+2. 进群获取到数据库脚本，创建表初始化数据
 3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8001。
 4. /uexam/source/vue/exam-student 是学生系统前端代码，建议使用JetBrains WebStorm打开，先运行安装包命令：【npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ 】
 【npm install --registry https://registry.npm.taobao.org 】 ，再运行编译启动命令：【npm run serve】 ，默认端口为80
@@ -115,7 +129,7 @@
 
 
 ### 学之思交流群
-   QQ群：[![加入QQ群](https://img.shields.io/badge/530136203-blue.svg)](https://jq.qq.com/?_wv=1027&k=5xc9pvX)  点击链接加入群聊【学之思交流群】
+   QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】
 
-#### 喜欢的朋友请star一下！！
+#### 开源不易，喜欢的朋友请star一下，谢谢！！
      
