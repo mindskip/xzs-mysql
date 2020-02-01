@@ -14,6 +14,10 @@ public class Subject implements Serializable {
 
     private String levelName;
 
+    private Integer itemOrder;
+
+    private Boolean deleted;
+
     public Integer getId() {
         return id;
     }
@@ -44,5 +48,21 @@ public class Subject implements Serializable {
 
     public void setLevelName(String levelName) {
         this.levelName = levelName == null ? null : levelName.trim();
+    }
+
+    public Integer getItemOrder() {
+        return itemOrder;
+    }
+
+    public void setItemOrder(Integer itemOrder) {
+        this.itemOrder = itemOrder;
+    }
+
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 }

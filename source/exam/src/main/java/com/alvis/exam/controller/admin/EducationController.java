@@ -32,21 +32,20 @@ public class EducationController extends BaseApiController {
     @RequestMapping(value = "/subject/page", method = RequestMethod.POST)
     public RestResponse<PageInfo<SubjectResponseVM>> pageList(@RequestBody SubjectPageRequestVM model) {
         PageInfo<Subject> pageInfo = subjectService.page(model);
-        PageInfo<SubjectResponseVM> page = PageInfoHelper.copyMap(pageInfo, e -> {
-            return modelMapper.map(e, SubjectResponseVM.class);
-        });
+        PageInfo<SubjectResponseVM> page = PageInfoHelper.copyMap(pageInfo, e -> modelMapper.map(e, SubjectResponseVM.class));
         return RestResponse.ok(page);
     }
 
     @RequestMapping(value = "/subject/edit", method = RequestMethod.POST)
-    public RestResponse<SubjectEditRequestVM> edit(@RequestBody @Valid SubjectEditRequestVM model) {
+    public RestResponse edit(@RequestBody @Valid SubjectEditRequestVM model) {
         Subject subject = modelMapper.map(model, Subject.class);
         if (model.getId() == null) {
+            subject.setDeleted(false);
             subjectService.insertByFilter(subject);
         } else {
             subjectService.updateByIdFilter(subject);
         }
-        return RestResponse.ok(model);
+        return RestResponse.ok();
     }
 
     @RequestMapping(value = "/subject/select/{id}", method = RequestMethod.POST)
@@ -56,4 +55,11 @@ public class EducationController extends BaseApiController {
         return RestResponse.ok(vm);
     }
 
+    @RequestMapping(value = "/subject/delete/{id}", method = RequestMethod.POST)
+    public RestResponse delete(@PathVariable Integer id) {
+        Subject subject = subjectService.selectById(id);
+        subject.setDeleted(true);
+        subjectService.updateByIdFilter(subject);
+        return RestResponse.ok();
+    }
 }

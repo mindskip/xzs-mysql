@@ -1,10 +1,10 @@
-logging:
-  path: /usr/log/exam/
-
 server:
   ssl:
     key-store: /usr/local/exam/ssl/tomcat.jks
     key-password: Qwer!@#$%
+
+logging:
+  path: /usr/log/exam/
 
 spring:
   redis:
