@@ -52,7 +52,6 @@ export default {
       this.form.levelName = this.enumFormat(this.levelEnum, this.form.level)
       subjectApi.edit(this.form).then(data => {
         if (data.code === 1) {
-          _this.form.id = data.response.id
           _this.$message.success(data.message)
           _this.delCurrentView(_this).then(() => {
             _this.$router.push('/education/subject/list')
