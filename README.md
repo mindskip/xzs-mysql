@@ -28,6 +28,11 @@
 ##### github ：[postgresql](https://github.com/alvis-u/uexam) | [mysql](https://github.com/alvis-u/uexam-mysql)
 
 
+### 学之思交流群
+   QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】
+   
+   作者QQ：2693073475
+
 ### 学生系统功能
 * 登录、注册： 注册时要选年级，过滤不同年级的试卷， 账号为student/123456
 * 首页： 任务中心、固定试卷、时段试卷、可以能做的一部分试卷
@@ -126,10 +131,6 @@
     </tr>
 </table>
 
-
-
-### 学之思交流群
-   QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】
 
 #### 开源不易，喜欢的朋友请star一下，谢谢！！
      
