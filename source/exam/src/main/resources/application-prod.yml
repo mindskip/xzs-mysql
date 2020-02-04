@@ -10,6 +10,6 @@ spring:
   redis:
     host: localhost
   datasource:
-    url: jdbc:mysql://localhost:3306/exam?useSSL=false&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://localhost:3306/exam?useSSL=false&useUnicode=true&serverTimezone=UTC&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456
