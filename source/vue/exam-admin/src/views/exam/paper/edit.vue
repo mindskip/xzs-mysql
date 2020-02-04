@@ -167,7 +167,6 @@ export default {
           this.formLoading = true
           examPaperApi.edit(this.form).then(re => {
             if (re.code === 1) {
-              _this.form = re.response
               _this.$message.success(re.message)
               _this.delCurrentView(_this).then(() => {
                 _this.$router.push('/exam/paper/list')

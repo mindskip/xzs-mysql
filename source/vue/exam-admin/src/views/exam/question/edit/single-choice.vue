@@ -2,7 +2,7 @@
   <div class="app-container">
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading" :rules="rules">
       <el-form-item label="年级：" prop="gradeLevel" required>
-        <el-select v-model="form.gradeLevel" placeholder="年级"  @change="levelChange">
+        <el-select v-model="form.gradeLevel" placeholder="年级"  @change="levelChange" clearable>
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
@@ -168,7 +168,6 @@ export default {
           this.formLoading = true
           questionApi.edit(this.form).then(re => {
             if (re.code === 1) {
-              _this.form = re.response
               _this.$message.success(re.message)
               _this.delCurrentView(_this).then(() => {
                 _this.$router.push('/exam/question/list')

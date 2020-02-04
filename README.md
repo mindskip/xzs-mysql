@@ -87,15 +87,12 @@
 ### 软件架构图
 ![](doc/image/frame/2.png)
 
-### 安装教程
+### 使用教程
 1. redis 安装
 2. 进群获取到数据库脚本，创建表初始化数据
-3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8001。
-4. /uexam/source/vue/exam-student 是学生系统前端代码，建议使用JetBrains WebStorm打开，先运行安装包命令：【npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ 】
-【npm install --registry https://registry.npm.taobao.org 】 ，再运行编译启动命令：【npm run serve】 ，默认端口为8080
-5. /uexam/source/vue/exam-admin 是后台管理系统前端代码，建议使用JetBrains WebStorm打开，先运行安装包命令：【npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ 】
-【npm install --registry https://registry.npm.taobao.org 】 ，再运行编译启动命令：【npm run serve】 ，默认端口为8081
-6. /uexam/source/wx/exam-student 是微信小程序端代码，直接使用微信开发者工具打开即可
+3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8000。
+4. 学生系统地址：http://localhost:8000/student
+5. 管理端地址：http://localhost:8000/admin
 
 ### 系统展示
 * 学生考试系统

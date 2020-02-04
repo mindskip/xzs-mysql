@@ -87,7 +87,6 @@ export default {
           this.formLoading = true
           userApi.createUser(this.form).then(data => {
             if (data.code === 1) {
-              _this.form.id = data.response.id
               _this.$message.success(data.message)
               _this.delCurrentView(_this).then(() => {
                 _this.$router.push('/user/teacher/list')

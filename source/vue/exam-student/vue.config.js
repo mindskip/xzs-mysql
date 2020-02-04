@@ -7,19 +7,19 @@ function resolve (dir) {
 
 module.exports = {
   publicPath: './',
-  outputDir: 'dist',
+  outputDir: 'student',
   assetsDir: 'static',
   lintOnSave: true,
   productionSourceMap: false,
   devServer: {
     open: true,
     host: 'localhost',
-    port: 8080,
+    port: 7000,
     https: false,
     hotOnly: false,
     proxy: {
       '/api': {
-        target: process.env.VUE_APP_API,
+        target: 'http://localhost:8000',
         changeOrigin: true
       }
     }
