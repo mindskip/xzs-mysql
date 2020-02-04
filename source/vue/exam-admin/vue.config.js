@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     open: true,
     host: 'localhost',
-    port: 7001,
+    port: 8002,
     https: false,
     hotOnly: false,
     proxy: {
