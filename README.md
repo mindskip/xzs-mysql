@@ -15,9 +15,9 @@
  * 思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
 
 
-### 其他本源码地址
- * gitee ：[postgresql版本](https://gitee.com/alvis-yu/uexam) | [mysql版本](https://gitee.com/alvis-yu/uexam-mysql)
- * github ：[postgresql版本](https://github.com/alvis-u/uexam) | [mysql版本](https://github.com/alvis-u/uexam-mysql)
+### 所有版本仓库地址
+ * gitee ：[postgresql 版本](https://gitee.com/alvis-yu/uexam) | [mysql 版本](https://gitee.com/alvis-yu/uexam-mysql)
+ * github ：[postgresql 版本](https://github.com/alvis-u/uexam) | [mysql 版本](https://github.com/alvis-u/uexam-mysql)
 
 
 ### 学之思交流群
