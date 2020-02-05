@@ -1,31 +1,39 @@
 # 学之思在线考试系统
 
 ### 项目介绍
-学之思在线考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷,可水平拓展在多台服务器上做负载均衡。考试功能齐全，目前有web端和微信小程序，能覆盖到pc机和手机等设备。
+学之思在线考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷、界面设计友好、代码结构清晰。目前支持web端和微信小程序，能覆盖到pc机和手机等设备。
+
 
 ### 开源版使用须知
-允许用于个人学习、毕业设计、教学案例、公益事业;
-
-开源版不适合商用，商用请购买商业版[https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html);
-
-禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
-
-授权介绍：[https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html)
-
+ * 仅用个人学习，商用请购买授权 [https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html)
+ * 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
 
 ### 演示地址
-官网：[https://www.alvisu.com](https://www.alvisu.com)
-
-学之思：[https://www.alvisu.com/uexam.html](https://www.alvisu.com/uexam.html) 
-
-学多多：[https://www.alvisu.com/xdd.html](https://www.alvisu.com/xdd.html) 
-
-思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
+ * 官网：[https://www.alvisu.com](https://www.alvisu.com)
+ * 学之思：[https://www.alvisu.com/uexam.html](https://www.alvisu.com/uexam.html) 
+ * 学多多：[https://www.alvisu.com/xdd.html](https://www.alvisu.com/xdd.html) 
+ * 思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
 
 
-### 衍生版本源码地址
-##### gitee ：[postgresql](https://gitee.com/alvis-yu/uexam) | [mysql](https://gitee.com/alvis-yu/uexam-mysql)
-##### github ：[postgresql](https://github.com/alvis-u/uexam) | [mysql](https://github.com/alvis-u/uexam-mysql)
+### 所有版本仓库地址
+ * gitee ：[postgresql 版本](https://gitee.com/alvis-yu/uexam) | [mysql 版本](https://gitee.com/alvis-yu/uexam-mysql)
+ * github ：[postgresql 版本](https://github.com/alvis-u/uexam) | [mysql 版本](https://github.com/alvis-u/uexam-mysql)
+
+
+### 学之思交流群
+ * QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】 
+ * 作者QQ：2693073475
+
+ 
+### 大事件
+ * 2020/2 项目累计突破2000 star
+ * 2020/1 累计超过150万用户使用
+ * 2019/12 项目累计突破1000 star
+ * 2019/11 入围开源中国最受欢迎开源项目
+ * 2019/10 累计超过100万学生使用
+ * 2019/10 荣获码云最有价值开源项目
+ * 2019/8 release 1.0 发布
+ * 2019/7 学之思开源考试系统项目启动
 
 
 ### 学生系统功能
@@ -82,15 +90,12 @@
 ### 软件架构图
 ![](doc/image/frame/2.png)
 
-### 安装教程
+### 使用教程
 1. redis 安装
 2. 进群获取到数据库脚本，创建表初始化数据
-3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8001。
-4. /uexam/source/vue/exam-student 是学生系统前端代码，建议使用JetBrains WebStorm打开，先运行安装包命令：【npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ 】
-【npm install --registry https://registry.npm.taobao.org 】 ，再运行编译启动命令：【npm run serve】 ，默认端口为80
-5. /uexam/source/vue/exam-admin 是后台管理系统前端代码，建议使用JetBrains WebStorm打开，先运行安装包命令：【npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/ 】
-【npm install --registry https://registry.npm.taobao.org 】 ，再运行编译启动命令：【npm run serve】 ，默认端口为81
-6. /uexam/source/wx/exam-student 是微信小程序端代码，直接使用微信开发者工具打开即可
+3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8000。
+4. 学生系统地址：http://localhost:8000/student
+5. 管理端地址：http://localhost:8000/admin
 
 ### 系统展示
 * 学生考试系统
@@ -126,10 +131,6 @@
     </tr>
 </table>
 
-
-
-### 学之思交流群
-   QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】
 
 #### 开源不易，喜欢的朋友请star一下，谢谢！！
      

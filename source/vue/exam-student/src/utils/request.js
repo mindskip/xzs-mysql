@@ -41,7 +41,6 @@ const request = function (loadtip, query) {
 
 const post = function (url, params) {
   const query = {
-    baseURL: process.env.VUE_APP_URL,
     url: url,
     method: 'post',
     withCredentials: true,
@@ -54,7 +53,6 @@ const post = function (url, params) {
 
 const postWithLoadTip = function (url, params) {
   const query = {
-    baseURL: process.env.VUE_APP_URL,
     url: url,
     method: 'post',
     withCredentials: true,
@@ -67,7 +65,6 @@ const postWithLoadTip = function (url, params) {
 
 const postWithOutLoadTip = function (url, params) {
   const query = {
-    baseURL: process.env.VUE_APP_URL,
     url: url,
     method: 'post',
     withCredentials: true,
@@ -80,7 +77,6 @@ const postWithOutLoadTip = function (url, params) {
 
 const get = function (url, params) {
   const query = {
-    baseURL: process.env.VUE_APP_URL,
     url: url,
     method: 'get',
     withCredentials: true,
@@ -93,7 +89,6 @@ const get = function (url, params) {
 
 const form = function (url, params) {
   const query = {
-    baseURL: process.env.VUE_APP_URL,
     url: url,
     method: 'post',
     withCredentials: true,

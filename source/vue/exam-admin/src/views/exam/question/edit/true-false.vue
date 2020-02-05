@@ -24,7 +24,7 @@
         <el-input v-model="form.analyze"  @focus="inputClick(form,'analyze')" />
       </el-form-item>
       <el-form-item label="分数：" prop="score" required>
-        <el-input v-model="form.score" placeholder="分数支持小数点后一位"  />
+        <el-input-number v-model="form.score" :precision="1" :step="1" :max="100"></el-input-number>
       </el-form-item>
       <el-form-item label="难度：" required>
         <el-rate v-model="form.difficult" class="question-item-rate"></el-rate>
@@ -135,6 +135,8 @@ export default {
       this.richEditor.instance = instance
       let currentContent = this.richEditor.object[this.richEditor.parameterName]
       this.richEditor.instance.setContent(currentContent)
+      // 光标定位到Ueditor
+      this.richEditor.instance.focus(true)
     },
     inputClick (object, parameterName) {
       this.richEditor.object = object
@@ -153,7 +155,6 @@ export default {
           this.formLoading = true
           questionApi.edit(this.form).then(re => {
             if (re.code === 1) {
-              _this.form = re.response
               _this.$message.success(re.message)
               _this.delCurrentView(_this).then(() => {
                 _this.$router.push('/exam/question/list')
@@ -178,14 +179,9 @@ export default {
       this.subjectFilter = this.subjects.filter(data => data.level === this.form.gradeLevel)
     },
     showQuestion () {
-      let _this = this
       this.questionShow.dialog = true
-      this.questionShow.loading = true
-      questionApi.select(this.form.id).then(re => {
-        _this.questionShow.qType = re.response.questionType
-        _this.questionShow.question = re.response
-        _this.questionShow.loading = false
-      })
+      this.questionShow.qType = this.form.questionType
+      this.questionShow.question = this.form
     },
     ...mapActions('exam', { initSubject: 'initSubject' }),
     ...mapActions('tagsView', { delCurrentView: 'delCurrentView' })

@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8000
   undertow:
     io-threads: 16
     worker-threads: 4000
@@ -13,7 +13,6 @@ server:
 logging:
   config: classpath:logback-spring.xml
   file: exam
-  path: /usr/log/exam/
 
 #mybatis
 mybatis:
@@ -26,6 +25,7 @@ system:
   security-ignore-urls:
     - /api/wx/**
     - /api/admin/upload/configAndUpload
+    - /api/admin/upload/auth
     - /api/student/user/register
   pwdKey:
     publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQClwwxhJKwStDnu7c0yCRkwTW2VKuLWwyVtFC6Zx9bYdF1qwqSP26CkDwaF6GHayIvv9b8BHlAaQH4SLIPzir062yzNukqspmthUw4gPJhbx1AQrWRoQJSv3/1Sk+tWyJRHXSiCZJZ3216LDhtx42LQ0HItDP8U9BLtsxA+5LEZzQIDAQAB
@@ -73,8 +73,6 @@ spring:
     type: redis
     redis:
       time-to-live: 12h   #12 hour
-
-  #spring mvc
 
 
   #runningtime environment

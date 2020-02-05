@@ -22,6 +22,19 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     private final SystemConfig systemConfig;
 
     @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addRedirectViewController("/", "/student/index.html");
+        registry.addRedirectViewController("/student", "/student/index.html");
+        registry.addRedirectViewController("/admin", "/admin/index.html");
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
+    }
+
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
         List<String> securityIgnoreUrls = systemConfig.getWx().getSecurityIgnoreUrls();
         String[] ignores = new String[securityIgnoreUrls.size()];

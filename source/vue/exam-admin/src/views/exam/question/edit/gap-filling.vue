@@ -17,14 +17,14 @@
       <el-form-item label="填空答案：" required>
         <el-form-item :label="item.prefix" :key="item.prefix"  v-for="item in form.items"  label-width="50px" class="question-item-label">
           <el-input v-model="item.content"   @focus="inputClick(item,'content')"  class="question-item-content-input"  style="width: 80%"/>
-          <span class="question-item-span">分数：</span><el-input v-model="item.score"  style="width:60px;" />
+          <span class="question-item-span">分数：</span><el-input-number v-model="item.score" :precision="1" :step="1" :max="100"  ></el-input-number>
         </el-form-item>
       </el-form-item>
       <el-form-item label="解析：" prop="analyze" required>
         <el-input v-model="form.analyze"  @focus="inputClick(form,'analyze')" />
       </el-form-item>
       <el-form-item label="分数：" prop="score" required>
-        <el-input v-model="form.score" placeholder="分数支持小数点后一位"  />
+        <el-input-number v-model="form.score" :precision="1" :step="1" :max="100"></el-input-number>
       </el-form-item>
       <el-form-item label="难度：" required>
         <el-rate v-model="form.difficult" class="question-item-rate"></el-rate>
@@ -66,7 +66,8 @@ export default {
         gradeLevel: null,
         subjectId: null,
         title: '',
-        items: [],
+        items: [
+        ],
         analyze: '',
         correct: '',
         score: '',
@@ -124,6 +125,8 @@ export default {
       this.richEditor.instance = instance
       let currentContent = this.richEditor.object[this.richEditor.parameterName]
       this.richEditor.instance.setContent(currentContent)
+      // 光标定位到Ueditor
+      this.richEditor.instance.focus(true)
     },
     inputClick (object, parameterName) {
       this.richEditor.object = object
@@ -133,16 +136,27 @@ export default {
     editorConfirm () {
       let content = this.richEditor.instance.getContent()
       if (this.richEditor.parameterName === 'title') { // 题干的正确答案重置
-        this.questionItemReset(content)
+        if (this.questionItemReset(content)) {
+          this.richEditor.object[this.richEditor.parameterName] = content
+          this.richEditor.dialogVisible = false
+        } else {
+
+        }
+      } else {
+        this.richEditor.object[this.richEditor.parameterName] = content
+        this.richEditor.dialogVisible = false
       }
-      this.richEditor.object[this.richEditor.parameterName] = content
-      this.richEditor.dialogVisible = false
     },
     questionItemReset (content) {
       let spanRegex = new RegExp('<span class="gapfilling-span (.*?)">(.*?)<\\/span>', 'g')
       let _this = this
       let newFormItem = []
-      content.match(spanRegex).forEach(function (span, index) {
+      let gapfillingItems = content.match(spanRegex)
+      if (gapfillingItems === null) {
+        this.$message.error('请插入填空')
+        return false
+      }
+      gapfillingItems.forEach(function (span, index) {
         let pairRegex = /<span class="gapfilling-span (.*?)">(.*?)<\/span>/
         pairRegex.test(span)
         newFormItem.push({ id: null, prefix: RegExp.$2, content: '', score: '0' })
@@ -159,6 +173,7 @@ export default {
         })
       })
       _this.form.items = newFormItem
+      return true
     },
     submitForm () {
       let _this = this
@@ -167,7 +182,6 @@ export default {
           this.formLoading = true
           questionApi.edit(this.form).then(re => {
             if (re.code === 1) {
-              _this.form = re.response
               _this.$message.success(re.message)
               _this.delCurrentView(_this).then(() => {
                 _this.$router.push('/exam/question/list')
@@ -189,14 +203,9 @@ export default {
       this.subjectFilter = this.subjects.filter(data => data.level === this.form.gradeLevel)
     },
     showQuestion () {
-      let _this = this
       this.questionShow.dialog = true
-      this.questionShow.loading = true
-      questionApi.select(this.form.id).then(re => {
-        _this.questionShow.qType = re.response.questionType
-        _this.questionShow.question = re.response
-        _this.questionShow.loading = false
-      })
+      this.questionShow.qType = this.form.questionType
+      this.questionShow.question = this.form
     },
     resetForm () {
       this.$refs['form'].resetFields()

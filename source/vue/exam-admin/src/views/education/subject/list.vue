@@ -23,7 +23,7 @@
           <router-link :to="{path:'/education/subject/edit', query:{id:row.id}}" class="link-left">
             <el-button size="mini">编辑</el-button>
           </router-link>
-          <el-button size="mini" type="danger" disabled class="link-left">删除</el-button>
+          <el-button  disabled size="mini" type="danger" @click="delSubject(row)" class="link-left">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -68,6 +68,17 @@ export default {
     submitForm () {
       this.queryParam.pageIndex = 1
       this.search()
+    },
+    delSubject (row) {
+      let _this = this
+      subjectApi.deleteSubject(row.id).then(re => {
+        if (re.code === 1) {
+          _this.search()
+          _this.$message.success(re.message)
+        } else {
+          _this.$message.error(re.message)
+        }
+      })
     }
   },
   computed: {

@@ -158,8 +158,10 @@ export default {
           this.formLoading = true
           taskApi.edit(this.form).then(data => {
             if (data.code === 1) {
-              _this.form = data.response
               _this.$message.success(data.message)
+              _this.delCurrentView(_this).then(() => {
+                _this.$router.push('/task/list')
+              })
             } else {
               _this.$message.error(data.message)
             }
@@ -178,7 +180,8 @@ export default {
     subjectFormatter (row, column, cellValue, index) {
       return this.subjectEnumFormat(cellValue)
     },
-    ...mapActions('exam', { initSubject: 'initSubject' })
+    ...mapActions('exam', { initSubject: 'initSubject' }),
+    ...mapActions('tagsView', { delCurrentView: 'delCurrentView' })
   },
   computed: {
     ...mapGetters('enumItem', ['enumFormat']),
