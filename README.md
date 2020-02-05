@@ -5,7 +5,7 @@
 
 
 ### 开源版使用须知
- * 仅用个人学习使用，商用请购买授权 [https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html);
+ * 仅用个人学习，商用请购买授权 [https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html)
  * 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
 
 ### 演示地址
