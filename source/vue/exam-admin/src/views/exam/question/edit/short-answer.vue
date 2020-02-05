@@ -21,7 +21,7 @@
         <el-input v-model="form.analyze"  @focus="inputClick(form,'analyze')" />
       </el-form-item>
       <el-form-item label="分数：" prop="score" required>
-        <el-input v-model="form.score" placeholder="分数支持小数点后一位"  />
+        <el-input-number v-model="form.score" :precision="1" :step="1" :max="100"></el-input-number>
       </el-form-item>
       <el-form-item label="难度：" required>
         <el-rate v-model="form.difficult" class="question-item-rate"></el-rate>

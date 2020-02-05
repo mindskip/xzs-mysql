@@ -5,21 +5,22 @@ import com.alvis.exam.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 @Component
 @AllArgsConstructor
 public class WebContext {
-
-    private final static ThreadLocal<User> USER_THREAD_LOCAL = new ThreadLocal<>();
+    private static final String USER_ATTRIBUTES = "USER_ATTRIBUTES";
     private final UserService userService;
 
 
     public void setCurrentUser(User user) {
-        USER_THREAD_LOCAL.set(user);
+        RequestContextHolder.currentRequestAttributes().setAttribute(USER_ATTRIBUTES, user, RequestAttributes.SCOPE_REQUEST);
     }
 
     public User getCurrentUser() {
-        User user = USER_THREAD_LOCAL.get();
+        User user = (User) RequestContextHolder.currentRequestAttributes().getAttribute(USER_ATTRIBUTES, RequestAttributes.SCOPE_REQUEST);
         if (null != user) {
             return user;
         } else {
@@ -28,15 +29,10 @@ public class WebContext {
                 return null;
             }
             user = userService.getUserByUserName(springUser.getUsername());
-            USER_THREAD_LOCAL.set(user);
+            if (null != user) {
+                setCurrentUser(user);
+            }
             return user;
         }
-    }
-
-    /**
-     * 删除当前线程的工作单元，建议放在finally中调用，避免内存泄漏
-     */
-    public  void clean() {
-        USER_THREAD_LOCAL.remove();
     }
 }

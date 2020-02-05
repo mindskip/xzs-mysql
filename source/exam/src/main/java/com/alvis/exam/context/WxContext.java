@@ -3,22 +3,26 @@ package com.alvis.exam.context;
 import com.alvis.exam.domain.User;
 import com.alvis.exam.domain.UserToken;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 @Component
 public class WxContext {
-    private final static ThreadLocal<User> USER_THREAD_LOCAL = new ThreadLocal<>();
-    private final static ThreadLocal<UserToken> USER_TOKEN_THREAD_LOCAL = new ThreadLocal<>();
+
+    private static final String USER_ATTRIBUTES = "USER_ATTRIBUTES";
+    private static final String USER_TOKEN_ATTRIBUTES = "USER_TOKEN_ATTRIBUTES";
+
 
     public void setContext(User user, UserToken userToken) {
-        USER_THREAD_LOCAL.set(user);
-        USER_TOKEN_THREAD_LOCAL.set(userToken);
+        RequestContextHolder.currentRequestAttributes().setAttribute(USER_ATTRIBUTES, user, RequestAttributes.SCOPE_REQUEST);
+        RequestContextHolder.currentRequestAttributes().setAttribute(USER_TOKEN_ATTRIBUTES, userToken, RequestAttributes.SCOPE_REQUEST);
     }
 
     public User getCurrentUser() {
-        return USER_THREAD_LOCAL.get();
+        return (User) RequestContextHolder.currentRequestAttributes().getAttribute(USER_ATTRIBUTES, RequestAttributes.SCOPE_REQUEST);
     }
 
     public UserToken getCurrentUserToken() {
-        return USER_TOKEN_THREAD_LOCAL.get();
+        return (UserToken) RequestContextHolder.currentRequestAttributes().getAttribute(USER_TOKEN_ATTRIBUTES, RequestAttributes.SCOPE_REQUEST);
     }
 }

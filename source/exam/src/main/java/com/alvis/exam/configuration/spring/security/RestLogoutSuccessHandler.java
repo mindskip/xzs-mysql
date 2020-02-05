@@ -31,12 +31,14 @@ public class RestLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
     private final UserService userService;
 
     @Override
-    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+    public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         org.springframework.security.core.userdetails.User springUser = (org.springframework.security.core.userdetails.User) authentication.getPrincipal();
-        com.alvis.exam.domain.User user = userService.getUserByUserName(springUser.getUsername());
-        UserEventLog userEventLog = new UserEventLog(user.getId(), user.getUserName(), user.getRealName(), new Date());
-        userEventLog.setContent(user.getUserName() + " 登出了学之思考试系统");
-        eventPublisher.publishEvent(new UserEvent(userEventLog));
+        if (null != springUser) {
+            com.alvis.exam.domain.User user = userService.getUserByUserName(springUser.getUsername());
+            UserEventLog userEventLog = new UserEventLog(user.getId(), user.getUserName(), user.getRealName(), new Date());
+            userEventLog.setContent(user.getUserName() + " 登出了学之思考试系统");
+            eventPublisher.publishEvent(new UserEvent(userEventLog));
+        }
         RestUtil.response(response, SystemCode.OK);
     }
 }

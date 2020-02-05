@@ -24,12 +24,10 @@ import java.util.ArrayList;
 public class RestDetailsServiceImpl implements UserDetailsService {
 
     private final UserService userService;
-    private final WebContext webContext;
 
     @Autowired
-    public RestDetailsServiceImpl(UserService userService, WebContext webContext) {
+    public RestDetailsServiceImpl(UserService userService) {
         this.userService = userService;
-        this.webContext = webContext;
     }
 
     @Override
@@ -44,8 +42,6 @@ public class RestDetailsServiceImpl implements UserDetailsService {
         ArrayList<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(RoleEnum.fromCode(user.getRole()).getRoleName()));
 
-        webContext.setCurrentUser(user);
-        User authUser = new User(user.getUserName(), user.getPassword(), grantedAuthorities);
-        return authUser;
+        return new User(user.getUserName(), user.getPassword(), grantedAuthorities);
     }
 }

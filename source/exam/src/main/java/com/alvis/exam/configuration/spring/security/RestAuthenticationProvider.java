@@ -63,8 +63,6 @@ public class RestAuthenticationProvider implements AuthenticationProvider {
             throw new LockedException("用户被禁用");
         }
 
-        webContext.setCurrentUser(user);
-
         ArrayList<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(RoleEnum.fromCode(user.getRole()).getRoleName()));
 
