@@ -1,49 +1,39 @@
 # 学之思在线考试系统
 
 ### 项目介绍
-学之思在线考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷,可水平拓展在多台服务器上做负载均衡。考试功能齐全，目前有web端和微信小程序，能覆盖到pc机和手机等设备。
+学之思在线考试系统是一款 java + vue 的前后端分离的考试系统。主要优点是开发、部署简单快捷、界面设计友好、代码结构清晰。目前支持web端和微信小程序，能覆盖到pc机和手机等设备。
 
 
 ### 开源版使用须知
-允许用于个人学习;
-
-开源版不适合商用，商用请购买商业版[https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html);
-
-禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
-
-授权介绍：[https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html)
-
+ * 仅用个人学习使用，商用请购买授权 [https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html);
+ * 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
 
 ### 演示地址
-官网：[https://www.alvisu.com](https://www.alvisu.com)
-
-学之思：[https://www.alvisu.com/uexam.html](https://www.alvisu.com/uexam.html) 
-
-学多多：[https://www.alvisu.com/xdd.html](https://www.alvisu.com/xdd.html) 
-
-思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
+ * 官网：[https://www.alvisu.com](https://www.alvisu.com)
+ * 学之思：[https://www.alvisu.com/uexam.html](https://www.alvisu.com/uexam.html) 
+ * 学多多：[https://www.alvisu.com/xdd.html](https://www.alvisu.com/xdd.html) 
+ * 思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
 
 
-### 衍生版本源码地址
-##### gitee ：[postgresql](https://gitee.com/alvis-yu/uexam) | [mysql](https://gitee.com/alvis-yu/uexam-mysql)
-##### github ：[postgresql](https://github.com/alvis-u/uexam) | [mysql](https://github.com/alvis-u/uexam-mysql)
+### 其他本源码地址
+ * gitee ：[postgresql版本](https://gitee.com/alvis-yu/uexam) | [mysql版本](https://gitee.com/alvis-yu/uexam-mysql)
+ * github ：[postgresql版本](https://github.com/alvis-u/uexam) | [mysql版本](https://github.com/alvis-u/uexam-mysql)
 
 
 ### 学之思交流群
-   QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】
-   
-   作者QQ：2693073475
+ * QQ群：[![加入QQ群](https://img.shields.io/badge/947654489-blue.svg)](https://jq.qq.com/?_wv=1027&k=5WxCaeY)  加群获取数据库脚本【学之思交流②群】 
+ * 作者QQ：2693073475
 
  
 ### 大事件
-##### 2020/2 项目累计突破2000 star
-##### 2020/1 累计超过150万用户使用
-##### 2019/12 项目累计突破1000 star
-##### 2019/11 入围开源中国最受欢迎开源项目
-##### 2019/10 累计超过100万学生使用
-##### 2019/10 荣获码云最有价值开源项目
-##### 2019/8 release 1.0 发布
-##### 2019/7 学之思开源考试系统项目启动
+ * 2020/2 项目累计突破2000 star
+ * 2020/1 累计超过150万用户使用
+ * 2019/12 项目累计突破1000 star
+ * 2019/11 入围开源中国最受欢迎开源项目
+ * 2019/10 累计超过100万学生使用
+ * 2019/10 荣获码云最有价值开源项目
+ * 2019/8 release 1.0 发布
+ * 2019/7 学之思开源考试系统项目启动
 
 
 ### 学生系统功能
