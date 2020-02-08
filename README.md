@@ -86,16 +86,15 @@
 微信小程序：
 * iView 主题样式
 
-
-### 软件架构图
-![](doc/image/frame/2.png)
-
 ### 使用教程
 1. redis 安装
 2. 进群获取到数据库脚本，创建表初始化数据
 3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8000。
 4. 学生系统地址：http://localhost:8000/student
 5. 管理端地址：http://localhost:8000/admin
+
+### 软件架构图
+![](doc/image/frame/2.png)
 
 ### 系统展示
 * 学生考试系统
