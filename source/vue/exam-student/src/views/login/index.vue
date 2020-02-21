@@ -56,8 +56,8 @@ export default {
     }
     return {
       loginForm: {
-        userName: null,
-        password: null,
+        userName: '',
+        password: '',
         remember: false
       },
       loginRules: {
