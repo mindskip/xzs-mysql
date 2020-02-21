@@ -56,8 +56,8 @@ export default {
     }
     return {
       loginForm: {
-        userName: 'student',
-        password: '123456',
+        userName: null,
+        password: null,
         remember: false
       },
       loginRules: {
