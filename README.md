@@ -9,9 +9,10 @@
  * 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
 
 ### 演示地址
- * 学之思-学生系统：[http://129.28.206.15:7000/student](http://129.28.206.15:7000/student) 
- * 学之思-管理系统：[http://129.28.206.15:7000/admin](http://129.28.206.15:7000/admin) 
- * 学多多-教师系统：[http://129.28.206.15:7000/teacher](http://129.28.206.15:7000/teacher) 
+ * 官网：[http://129.28.206.15:8080](http://129.28.206.15:8080)
+ * 学之思：[http://129.28.206.15:8080/uexam.html](http://129.28.206.15:8080/uexam.html) 
+ * 学多多：[http://129.28.206.15:8080/xdd.html](http://129.28.206.15:8080/xdd.html) 
+ * 思多多：[http://129.28.206.15:8080/sdd.html](http://129.28.206.15:8080/sdd.html) 
 
 ### 所有版本仓库地址
  * gitee ：[postgresql 版本](https://gitee.com/alvis-yu/uexam) | [mysql 版本](https://gitee.com/alvis-yu/uexam-mysql)
