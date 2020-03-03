@@ -5,15 +5,14 @@
 
 
 ### 开源版使用须知
- * 仅用个人学习，商用请购买授权 [https://www.alvisu.com/buy.html](https://www.alvisu.com/buy.html)
+ * 仅用个人学习，商用请购买授权
  * 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
 
 ### 演示地址
- * 官网：[https://www.alvisu.com](https://www.alvisu.com)
- * 学之思：[https://www.alvisu.com/uexam.html](https://www.alvisu.com/uexam.html) 
- * 学多多：[https://www.alvisu.com/xdd.html](https://www.alvisu.com/xdd.html) 
- * 思多多：[https://www.alvisu.com/sdd.html](https://www.alvisu.com/sdd.html) 
-
+ * 官网：[http://129.28.206.15:8080](http://129.28.206.15:8080)
+ * 学之思：[http://129.28.206.15:8080/uexam.html](http://129.28.206.15:8080/uexam.html) 
+ * 学多多：[http://129.28.206.15:8080/xdd.html](http://129.28.206.15:8080/xdd.html) 
+ * 思多多：[http://129.28.206.15:8080/sdd.html](http://129.28.206.15:8080/sdd.html) 
 
 ### 所有版本仓库地址
  * gitee ：[postgresql 版本](https://gitee.com/alvis-yu/uexam) | [mysql 版本](https://gitee.com/alvis-yu/uexam-mysql)
@@ -86,16 +85,15 @@
 微信小程序：
 * iView 主题样式
 
-
-### 软件架构图
-![](doc/image/frame/2.png)
-
 ### 使用教程
 1. redis 安装
 2. 进群获取到数据库脚本，创建表初始化数据
 3. /uexam/source/exam为后台代码，建议使用IntelliJ IDEA打开，在application-dev.yml文件中，配置好postgesql/mysql、redis的服务地址，打开ExamApplication文件编译运行,默认端口为8000。
 4. 学生系统地址：http://localhost:8000/student
 5. 管理端地址：http://localhost:8000/admin
+
+### 软件架构图
+![](doc/image/frame/2.png)
 
 ### 系统展示
 * 学生考试系统

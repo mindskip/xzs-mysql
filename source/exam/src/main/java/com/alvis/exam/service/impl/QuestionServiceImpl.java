@@ -155,7 +155,9 @@ public class QuestionServiceImpl extends BaseServiceImpl<Question> implements Qu
     public void setQuestionInfoFromVM(TextContent infoTextContent, QuestionEditRequestVM model) {
         List<QuestionItemObject> itemObjects = model.getItems().stream().map(i ->
                 {
-                    QuestionItemObject item = modelMapper.map(i, QuestionItemObject.class);
+                    QuestionItemObject item = new QuestionItemObject();
+                    item.setPrefix(i.getPrefix());
+                    item.setContent(i.getContent());
                     item.setScore(ExamUtil.scoreFromVM(i.getScore()));
                     return item;
                 }

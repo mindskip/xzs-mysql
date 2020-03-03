@@ -36,7 +36,7 @@
             <div class="card-panel-text">
               答卷总数
             </div>
-            <count-to :start-val="0" :end-val="userActionCount" :duration="3600" class="card-panel-num" v-loading="loading"/>
+            <count-to :start-val="0" :end-val="doExamPaperCount" :duration="3600" class="card-panel-num" v-loading="loading"/>
           </div>
         </div>
       </el-col>
@@ -76,7 +76,7 @@ export default {
     return {
       examPaperCount: 0,
       questionCount: 0,
-      userActionCount: 0,
+      doExamPaperCount: 0,
       doQuestionCount: 0,
       echartsUserAction: null,
       echartsQuestion: null,
@@ -94,7 +94,7 @@ export default {
       let response = re.response
       _this.examPaperCount = response.examPaperCount
       _this.questionCount = response.questionCount
-      _this.userActionCount = response.userActionCount
+      _this.doExamPaperCount = response.doExamPaperCount
       _this.doQuestionCount = response.doQuestionCount
       _this.echartsUserAction.setOption(this.option('用户活跃度', '{b}日{c}度', response.mothDayText, response.mothDayUserActionValue))
       _this.echartsQuestion.setOption(this.option('题目月数量', '{b}日{c}题', response.mothDayText, response.mothDayDoExamQuestionValue))

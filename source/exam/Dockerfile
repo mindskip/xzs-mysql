@@ -5,6 +5,6 @@ MAINTAINER caoqiang<caoqiang@jiuqi.com.cn>
 #ADD src/ /app/src/
 WORKDIR /app/
 #RUN mvn package -Pdev
-ADD target/exam-2.0.1.jar target/exam-2.0.1.jar
+ADD target/exam.jar /app/exam.jar
 
-CMD ["java","-jar","target/exam-2.0.1.jar"]  
+#CMD ["java", "-jar", "exam.jar"]  

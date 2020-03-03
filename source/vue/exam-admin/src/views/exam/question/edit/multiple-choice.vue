@@ -146,8 +146,6 @@ export default {
     inputClick (object, parameterName) {
       this.richEditor.object = object
       this.richEditor.parameterName = parameterName
-      // 光标定位到Ueditor
-      this.richEditor.instance.focus(true)
       this.richEditor.dialogVisible = true
     },
     editorConfirm () {

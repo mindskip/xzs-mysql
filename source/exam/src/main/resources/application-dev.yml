@@ -3,8 +3,8 @@ logging:
 
 spring:
   redis:
-    host: 192.168.0.96
+    host: localhost
   datasource:
-    url: jdbc:mysql://192.168.0.69:3306/exam?useSSL=false&useUnicode=true&serverTimezone=UTC&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://localhost:3306/exam?useSSL=false&useUnicode=true&serverTimezone=UTC&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
     username: root
     password: 123456

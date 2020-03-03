@@ -24,16 +24,28 @@ services:
       - "8182"
     ports:
       - 8182:8182
+  redis:
+    image: redis:alpine
+    container_name: redis
+    expose:
+      - "6379"
+    ports:
+      - 6379:6379
+    networks:
+      - dir1_some-net
   exam-server:
     build: ./source/exam/
     image: exam-server
     expose:
       - "8001"
     ports:
-      - 8001:8001
-  redis:
-    image: redis:alpine
-    expose:
-      - "6379"
-    ports:
-      - 6379:6379
+      - 8001:8000
+    command: java -Duser.timezone=Asia/Shanghai -jar -Dspring.profiles.active=docker exam.jar
+    depends_on:
+      - redis
+    networks:
+      - dir1_some-net
+
+networks:
+  dir1_some-net:
+    driver: bridge
