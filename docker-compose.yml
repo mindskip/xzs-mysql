@@ -1,29 +1,5 @@
 version: "3"
 services:
-  exam-admin:
-    build: ./source/vue/exam-admin/
-    image: exam-admin
-    environment:
-      - PORT=8181
-      - VUE_APP_URL=http://localhost:8001
-      - VUE_APP_API=http://localhost:8181
-    expose:
-      - "8181"
-    ports:
-      - 8181:8181
-    links:
-      - exam-server
-  exam-student:
-    build: ./source/vue/exam-student/
-    image: exam-student
-    environment:
-      - PORT=8182
-      - VUE_APP_URL=http://localhost:8001
-      - VUE_APP_API=http://localhost:8182
-    expose:
-      - "8182"
-    ports:
-      - 8182:8182
   redis:
     image: redis:alpine
     container_name: redis
