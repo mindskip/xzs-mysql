@@ -52,7 +52,7 @@
 
 ### 开发部署教程
 
-* [https://mindskip.gitee.io/xzs-mysql](https://mindskip.gitee.io/xzs-mysql)
+* [https://www.mindskip.net:889](https://www.mindskip.net:889)
 
 ### 学生系统功能
 
