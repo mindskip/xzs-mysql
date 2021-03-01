@@ -52,7 +52,7 @@
 
 ### 开发部署教程
 
-* [https://www.mindskip.net:889](https://www.mindskip.net:889)
+* [https://www.mindskip.net:999](https://www.mindskip.net:999)
 
 ### 学生系统功能
 
