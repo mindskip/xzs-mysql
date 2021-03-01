@@ -52,7 +52,7 @@ github - mysql ：[https://github.com/mindskip/xzs-mysql](https://github.com/min
 
 ## 架构图
 
-![架构图](https://gitee.com/mindskip/xzs-mysql/raw/master/doc/image/frame/1.png)
+![架构图](1.png)
 
 ## 数据库设计
 
