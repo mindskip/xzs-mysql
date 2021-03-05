@@ -21,7 +21,7 @@ github - mysql ：[https://github.com/mindskip/xzs-mysql](https://github.com/min
 |  环境   | 版本  |
 |  ----  | ----  |
 | 操作系统  | Windows / Linux |
-| Jdk  | 8 |
+| Jdk  | 1.8 |
 | Redis  | 6.0 |
 | Mysql  | 8.0 |
 
