@@ -15,7 +15,7 @@
 
 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
 
-### 学之思仓库地址
+### 仓库地址
 
 gitee - mysql ：[https://gitee.com/mindskip/xzs-mysql](https://gitee.com/mindskip/xzs-mysql)
 
