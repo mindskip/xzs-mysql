@@ -18,6 +18,8 @@ public class UserResponseVM extends BaseVM {
 
     private String userName;
 
+    private String clearPassword;
+
     private String realName;
 
     private Integer age;
@@ -169,5 +171,13 @@ public class UserResponseVM extends BaseVM {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public String getClearPassword() {
+        return clearPassword;
+    }
+
+    public void setClearPassword(String clearPassword) {
+        this.clearPassword = clearPassword;
     }
 }

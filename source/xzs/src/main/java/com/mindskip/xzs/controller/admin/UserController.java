@@ -93,7 +93,8 @@ public class UserController extends BaseApiController {
             model.setBirthDay(null);
         }
         User user = modelMapper.map(model, User.class);
-
+        user.setClearPassword(model.getPassword());
+        user.setUserType(1);
         if (model.getId() == null) {
             String encodePwd = authenticationService.pwdEncode(model.getPassword());
             user.setPassword(encodePwd);
