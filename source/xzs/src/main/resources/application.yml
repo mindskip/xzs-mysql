@@ -38,11 +38,11 @@ system:
       - /api/wx/student/auth/bind
       - /api/wx/student/auth/checkBind
       - /api/wx/student/user/register
-  qn:
-    url: http://xzs.file.mindskip.net
-    bucket: mindskip
-    access-key: KabOBTPGVll2sSV8d1OIlW8G4_n_cReE7RSsLafA
-    secret-key: mSltk9_9KtCdFetCmxvvCAgsBg8JZHiXMuQeqSJA
+#  qn:
+#    url: http://xzs.file.mindskip.net
+#    bucket: mindskip
+#    access-key: KabOBTPGVll2sSV8d1OIlW8G4_n_cReE7RSsLafA
+#    secret-key: mSltk9_9KtCdFetCmxvvCAgsBg8JZHiXMuQeqSJA
 
 
 #mybatis page helper
