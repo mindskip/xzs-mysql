@@ -1,0 +1,180 @@
+{
+  "name":"管理学基础",
+  "id":"1621",
+  "sections": [
+    {
+      "level": 1,
+      "name":"管理与管理学",
+      "id":57035,
+      "exerciseId": 1621,
+      "minutials": [
+        {
+          "name": "本章导读",
+          "id":166012,
+          "exerciseId": 1621,
+          "sectionId": 57035,
+          "type": "text"
+        },
+        {
+          "name": "升任公司总裁后的思考",
+          "id":166013,
+          "exerciseId": 1621,
+          "sectionId": 57035,
+          "type": "text"
+        },
+        {
+          "name": "升任公司总裁后的思考",
+          "id":166014,
+          "exerciseId": 1621,
+          "sectionId": 57035,
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "name":"知识点练习",
+      "id":57036,
+      "exerciseId": 1621,
+      "minutials": [
+        {
+          "name": "管理的含义",
+          "id":166015,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "管理的含义",
+          "id":166016,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+        {
+          "name": "管理的性质",
+          "id":166017,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "管理者的性质",
+          "id":166018,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+        {
+          "name": "管理的职能",
+          "id":166019,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "管理的职能",
+          "id":166020,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+        {
+          "name": "管理者的分类",
+          "id":166021,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "管理者分类",
+          "id":166022,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+        {
+          "name": "管理者角色",
+          "id":166023,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "管理者角色",
+          "id":166024,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+        {
+          "name": "管理者能",
+          "id":166025,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "管理者技能",
+          "id":166026,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+        {
+          "name": "寓言故事",
+          "id":166027,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+
+        {
+          "name": "管理与组织环境",
+          "id":166028,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+
+        {
+          "name": "管理与组织环境",
+          "id":166029,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        },
+
+        {
+          "name": "环境的不确定性",
+          "id":166030,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "text"
+        },
+
+        {
+          "name": "环境的不确定性",
+          "id":166031,
+          "exerciseId": 1621,
+          "sectionId": 57036,
+          "type": "video"
+        }
+      ]
+    }
+
+  ]
+}
