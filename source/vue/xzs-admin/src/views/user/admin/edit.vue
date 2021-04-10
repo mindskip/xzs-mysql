@@ -8,7 +8,7 @@
       <el-form-item label="密码：" required>
         <el-input v-model="form.password"></el-input>
       </el-form-item>
-      <el-form-item label="真实姓名：" prop="realName"   required>
+      <el-form-item label="真实姓名：" prop="realName">
         <el-input v-model="form.realName"></el-input>
       </el-form-item>
       <el-form-item label="年龄：">
@@ -62,8 +62,8 @@ export default {
         userName: [
           { required: true, message: '请输入用户名', trigger: 'blur' }
         ],
-        realName: [
-          { required: true, message: '请输入真实姓名', trigger: 'blur' }
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' }
         ]
       }
     }
