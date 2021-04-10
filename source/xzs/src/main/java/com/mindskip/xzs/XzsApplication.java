@@ -25,6 +25,6 @@ public class XzsApplication {
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(XzsApplication.class, args);
-        ApplicationContextProvider.getBean(QuestionImport.class).save(1,"1621");
+        //ApplicationContextProvider.getBean(QuestionImport.class).save(1,"1621");
     }
 }
