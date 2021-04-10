@@ -13,6 +13,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -131,8 +132,8 @@ public class HttpClientUtil {
         Header cookieHeader = new BasicHeader("Cookie","MoodleSession=" + token);
         httPost.addHeader(cookieHeader);
 
-        Header referHeader = new BasicHeader("Accept","application/json");
-        httPost.addHeader(referHeader);
+//        Header referHeader = new BasicHeader("Accept","application/json");
+//        httPost.addHeader(referHeader);
 
         Header agent = new BasicHeader("User-Agent","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36");
         httPost.addHeader(agent);
@@ -156,5 +157,50 @@ public class HttpClientUtil {
         return null;
 
     }
+
+    public static String post(String url ,Map<String,String> params ,List<NameValuePair> nvps,Map<String,String> headers,String token,String userName) {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost httPost = new HttpPost(url);
+        if (CollectionUtils.isEmpty(nvps)) {
+            nvps = new ArrayList<>();
+        }
+        if(params != null && params.size() != 0){
+            for(Map.Entry entry : params.entrySet()){
+                nvps.add(new BasicNameValuePair(entry.getKey().toString() , entry.getValue().toString()));
+            }
+        }
+
+        if(headers != null && headers.size() != 0){
+            for(Map.Entry entry : headers.entrySet()){
+                httPost.addHeader(new BasicHeader(entry.getKey().toString() , entry.getValue().toString()));
+            }
+        }
+
+        //cookie
+        Header cookieHeader = new BasicHeader("Cookie","MoodleSession=" + token + ";" + "username" + "=" + userName);
+        httPost.addHeader(cookieHeader);
+
+
+
+        try {
+            httPost.setEntity(new UrlEncodedFormEntity(nvps , Charset.forName("UTF-8")));
+            CloseableHttpResponse response2 = httpclient.execute(httPost);
+            HttpEntity entity2 = response2.getEntity();
+            // do something useful with the response body
+            // and ensure it is fully consumed
+            String respStr = EntityUtils.toString(entity2);
+            response2.close();
+            return respStr;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
 
 }

@@ -9,7 +9,9 @@ public enum QuestionTypeEnum {
     MultipleChoice(2, "多选题"),
     TrueFalse(3, "判断题"),
     GapFilling(4, "填空题"),
-    ShortAnswer(5, "简答题");
+    ShortAnswer(5, "简答题"),
+    view(6,"阅读题"),
+    video(7,"视频观看");
 
     int code;
     String name;

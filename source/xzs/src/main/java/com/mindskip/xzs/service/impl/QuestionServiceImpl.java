@@ -133,6 +133,9 @@ public class QuestionServiceImpl extends BaseServiceImpl<Question> implements Qu
             case ShortAnswer:
                 questionEditRequestVM.setCorrect(questionObject.getCorrect());
                 break;
+            case view:
+                questionEditRequestVM.setCorrect(questionObject.getCorrect());
+                break;
             default:
                 break;
         }

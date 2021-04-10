@@ -13,6 +13,8 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import com.mindskip.xzs.utility.HttpClientUtil;
 import org.apache.commons.io.FileUtils;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -27,7 +29,8 @@ public class Parser {
     public static void main(String[] args) throws IOException {
         //getMid();
         //getMidInfo();
-        answerQuestion();
+        //answerQuestion();
+        answer();
     }
 
     public static void getLocation() {
@@ -58,7 +61,7 @@ public class Parser {
         String url = "http://xinjiang.ouchn.cn/mod/quiz/processattempt.php?cmid=166036";
 
         Map<String,String> cookies = new HashMap<>();
-        cookies.put("MoodleSession","84jq2mtu9tqd5t8aerf1fpc25f");
+        cookies.put("MoodleSession","v9r9e30nu5f94v1fbfpd345vcd");
         cookies.put("username","2065001465720");
 
         Map<String,String> headers = new HashMap<>();
@@ -165,7 +168,7 @@ public class Parser {
         data.put("thispage","2");
         data.put("nextpage","-1");
         data.put("timeup","0");
-        data.put("sesskey","wjspTHFntz");
+        data.put("sesskey","BBVPUDoTc4");
         data.put("slots","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18");
 
         Document doc = null;
@@ -176,7 +179,7 @@ public class Parser {
                     .headers(headers)
                     .data(data)
                     .timeout(5000)
-                    .get();
+                    .post();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -188,6 +191,73 @@ public class Parser {
 
     }
 
+    public static void answer() {
+        String url = "http://xinjiang.ouchn.cn/mod/quiz/processattempt.php?cmid=166036";
+
+        Map<String,String> headers = new HashMap<>();
+        headers.put("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+        headers.put("Accept-Encoding","gzip, deflate");
+        headers.put("Accept-Language","zh-CN,zh;q=0.9,en;q=0.8");
+        headers.put("Content-Type","multipart/form-data;boundary=----WebKitFormBoundary45VaB2G3vuKxgk92");
+
+
+        String userName = "2065001465720";
+        String token = "v9r9e30nu5f94v1fbfpd345vcd";
+
+        List<NameValuePair> nvps = new ArrayList<>();
+        nvps.add(new BasicNameValuePair("q51154:7_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:7_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:7_:sequencecheck","2"));
+        nvps.add(new BasicNameValuePair("q51154:8_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:8_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:8_:sequencecheck","3"));
+        nvps.add(new BasicNameValuePair("q51154:8_choice0","0"));
+        nvps.add(new BasicNameValuePair("q51154:8_choice1","1"));
+        nvps.add(new BasicNameValuePair("q51154:8_choice2","0"));
+        nvps.add(new BasicNameValuePair("q51154:8_choice3","1"));
+        nvps.add(new BasicNameValuePair("q51154:9_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:9_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:9_:sequencecheck","3"));
+        nvps.add(new BasicNameValuePair("q51154:9_choice0","1"));
+        nvps.add(new BasicNameValuePair("q51154:9_choice1","0"));
+        nvps.add(new BasicNameValuePair("q51154:9_choice2","1"));
+        nvps.add(new BasicNameValuePair("q51154:9_choice3","0"));
+        nvps.add(new BasicNameValuePair("q51154:10_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:10_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:10_:sequencecheck","3"));
+        nvps.add(new BasicNameValuePair("q51154:10_choice0","1"));
+        nvps.add(new BasicNameValuePair("q51154:10_choice1","0"));
+        nvps.add(new BasicNameValuePair("q51154:10_choice2","1"));
+        nvps.add(new BasicNameValuePair("q51154:10_choice3","0"));
+        nvps.add(new BasicNameValuePair("q51154:11_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:11_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:11_:sequencecheck","3"));
+        nvps.add(new BasicNameValuePair("q51154:11_choice0","1"));
+        nvps.add(new BasicNameValuePair("q51154:11_choice1","0"));
+        nvps.add(new BasicNameValuePair("q51154:11_choice2","0"));
+        nvps.add(new BasicNameValuePair("q51154:11_choice3","1"));
+        nvps.add(new BasicNameValuePair("q51154:12_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:12_:flagged","0"));
+        nvps.add(new BasicNameValuePair("q51154:12_:sequencecheck","3"));
+        nvps.add(new BasicNameValuePair("q51154:12_choice0","0"));
+        nvps.add(new BasicNameValuePair("q51154:12_choice1","1"));
+        nvps.add(new BasicNameValuePair("q51154:12_choice2","1"));
+        nvps.add(new BasicNameValuePair("q51154:12_choice3","0"));
+        nvps.add(new BasicNameValuePair("next","下一页"));
+        nvps.add(new BasicNameValuePair("attempt","51154"));
+        nvps.add(new BasicNameValuePair("thispage","1"));
+        nvps.add(new BasicNameValuePair("nextpage","2"));
+        nvps.add(new BasicNameValuePair("timeup","0"));
+        nvps.add(new BasicNameValuePair("sesskey","BBVPUDoTc4"));
+        nvps.add(new BasicNameValuePair("scrollpos",""));
+        nvps.add(new BasicNameValuePair("slots","7,8,9,10,11,12"));
+
+        String response = HttpClientUtil.post(url,null,nvps,headers,token,userName);
+        System.out.println(response);
+//        JSONObject jsonObject = JSON.parseObject(response);
+//        System.out.println(JSONObject.toJSONString(jsonObject, SerializerFeature.PrettyFormat));
+
+    }
 
     public static void getSection() throws IOException {
         String url = "http://xinjiang.ouchn.cn/course/view.php?id=1621";
@@ -337,5 +407,6 @@ public class Parser {
         data.put("slots","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18");
 
     }
+
 
 }
