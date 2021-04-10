@@ -41,6 +41,7 @@ public class ExamPaperController extends BaseApiController {
 
     @RequestMapping(value = "/taskExamPage", method = RequestMethod.POST)
     public RestResponse<PageInfo<ExamResponseVM>> taskExamPageList(@RequestBody ExamPaperPageRequestVM model) {
+        model.setLevel(null);
         PageInfo<ExamPaper> pageInfo = examPaperService.taskExamPage(model);
         PageInfo<ExamResponseVM> page = PageInfoHelper.copyMap(pageInfo, e -> {
             ExamResponseVM vm = modelMapper.map(e, ExamResponseVM.class);
