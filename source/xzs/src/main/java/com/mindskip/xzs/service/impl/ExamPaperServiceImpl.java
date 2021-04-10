@@ -3,6 +3,7 @@ package com.mindskip.xzs.service.impl;
 import com.mindskip.xzs.domain.*;
 import com.mindskip.xzs.domain.TextContent;
 import com.mindskip.xzs.domain.enums.ExamPaperTypeEnum;
+import com.mindskip.xzs.domain.enums.QuestionTypeEnum;
 import com.mindskip.xzs.domain.exam.ExamPaperQuestionItemObject;
 import com.mindskip.xzs.domain.exam.ExamPaperTitleItemObject;
 import com.mindskip.xzs.domain.other.KeyValue;
@@ -130,6 +131,9 @@ public class ExamPaperServiceImpl extends BaseServiceImpl<ExamPaper> implements 
                 Question question = questions.stream().filter(q -> q.getId().equals(i.getId())).findFirst().get();
                 QuestionEditRequestVM questionEditRequestVM = questionService.getQuestionEditRequestVM(question);
                 questionEditRequestVM.setItemOrder(i.getItemOrder());
+                if (questionEditRequestVM.getQuestionType().intValue() == QuestionTypeEnum.view.getCode()) {
+                    questionEditRequestVM.setQuestionType(QuestionTypeEnum.ShortAnswer.getCode());
+                }
                 return questionEditRequestVM;
             }).collect(Collectors.toList());
             tTitleVM.setQuestionItems(questionItemsVM);

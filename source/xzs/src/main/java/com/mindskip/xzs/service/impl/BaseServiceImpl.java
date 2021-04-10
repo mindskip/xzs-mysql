@@ -2,6 +2,7 @@ package com.mindskip.xzs.service.impl;
 
 import com.mindskip.xzs.repository.BaseMapper;
 import com.mindskip.xzs.service.BaseService;
+import org.springframework.transaction.annotation.Transactional;
 
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
