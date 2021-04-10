@@ -5,12 +5,12 @@
       <el-form-item label="用户名："  prop="userName" required>
         <el-input v-model="form.userName"></el-input>
       </el-form-item>
-      <el-form-item label="密码："  required>
+      <el-form-item label="密码：" required>
         <el-input v-model="form.password"></el-input>
       </el-form-item>
-      <el-form-item label="真实姓名：" prop="realName" required>
-        <el-input v-model="form.realName"></el-input>
-      </el-form-item>
+<!--      <el-form-item label="真实姓名：" prop="realName" required>-->
+<!--        <el-input v-model="form.realName"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item label="年龄：">
         <el-input v-model="form.age"></el-input>
       </el-form-item>
@@ -68,8 +68,8 @@ export default {
         userName: [
           { required: true, message: '请输入用户名', trigger: 'blur' }
         ],
-        realName: [
-          { required: true, message: '请输入真实姓名', trigger: 'blur' }
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' }
         ],
         userLevel: [
           { required: true, message: '请选择年级', trigger: 'change' }
