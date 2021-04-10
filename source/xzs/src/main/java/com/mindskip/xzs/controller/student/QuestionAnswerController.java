@@ -5,6 +5,7 @@ import com.mindskip.xzs.base.RestResponse;
 import com.mindskip.xzs.domain.ExamPaperQuestionCustomerAnswer;
 import com.mindskip.xzs.domain.Subject;
 import com.mindskip.xzs.domain.TextContent;
+import com.mindskip.xzs.domain.enums.QuestionTypeEnum;
 import com.mindskip.xzs.domain.question.QuestionObject;
 import com.mindskip.xzs.service.ExamPaperQuestionCustomerAnswerService;
 import com.mindskip.xzs.service.QuestionService;
@@ -53,6 +54,9 @@ public class QuestionAnswerController extends BaseApiController {
             String clearHtml = HtmlUtil.clear(questionObject.getTitleContent());
             vm.setShortTitle(clearHtml);
             vm.setSubjectName(subject.getName());
+            if (vm.getQuestionType() == QuestionTypeEnum.view.getCode()) {
+                vm.setQuestionType(QuestionTypeEnum.ShortAnswer.getCode());
+            }
             return vm;
         });
         return RestResponse.ok(page);
@@ -64,7 +68,13 @@ public class QuestionAnswerController extends BaseApiController {
         QuestionAnswerVM vm = new QuestionAnswerVM();
         ExamPaperQuestionCustomerAnswer examPaperQuestionCustomerAnswer = examPaperQuestionCustomerAnswerService.selectById(id);
         ExamPaperSubmitItemVM questionAnswerVM = examPaperQuestionCustomerAnswerService.examPaperQuestionCustomerAnswerToVM(examPaperQuestionCustomerAnswer);
+        if (examPaperQuestionCustomerAnswer.getQuestionType() == QuestionTypeEnum.view.getCode()) {
+            examPaperQuestionCustomerAnswer.setQuestionType(QuestionTypeEnum.ShortAnswer.getCode());
+        }
         QuestionEditRequestVM questionVM = questionService.getQuestionEditRequestVM(examPaperQuestionCustomerAnswer.getQuestionId());
+        if (questionVM.getQuestionType() == QuestionTypeEnum.view.getCode()) {
+            questionVM.setQuestionType(QuestionTypeEnum.ShortAnswer.getCode());
+        }
         vm.setQuestionVM(questionVM);
         vm.setQuestionAnswerVM(questionAnswerVM);
         return RestResponse.ok(vm);
