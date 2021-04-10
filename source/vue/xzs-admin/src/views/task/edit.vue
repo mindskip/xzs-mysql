@@ -127,6 +127,7 @@ export default {
       this.listLoading = true
       examPaperApi.taskExamPage(this.paperPage.queryParam).then(data => {
         const re = data.response
+        console.log(re)
         this.paperPage.tableData = re.list
         this.paperPage.total = re.total
         this.paperPage.queryParam.pageIndex = re.pageNum
