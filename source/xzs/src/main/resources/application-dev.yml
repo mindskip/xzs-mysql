@@ -5,7 +5,7 @@ spring:
   redis:
     host: 47.96.136.56
   datasource:
-    url: jdbc:mysql://47.96.136.56:3306/xzs?useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&allowMultiQueries=true
-    username: root
-    password: 1234newpwd!@#ABC
+    url: jdbc:mysql://47.96.136.56:3306/memeda?useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&allowMultiQueries=true
+    username: memeda
+    password: 123Qwe!@#
     driver-class-name: com.mysql.cj.jdbc.Driver
