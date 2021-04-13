@@ -36,6 +36,8 @@ public class QuestionEditRequestVM {
 
     private Integer itemOrder;
 
+    private Integer questionRealType;
+
     public Integer getId() {
         return id;
     }
@@ -130,5 +132,13 @@ public class QuestionEditRequestVM {
 
     public void setItemOrder(Integer itemOrder) {
         this.itemOrder = itemOrder;
+    }
+
+    public Integer getQuestionRealType() {
+        return questionRealType;
+    }
+
+    public void setQuestionRealType(Integer questionRealType) {
+        this.questionRealType = questionRealType;
     }
 }
