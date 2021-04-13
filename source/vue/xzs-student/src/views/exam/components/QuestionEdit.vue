@@ -43,9 +43,65 @@
     <div v-else-if="qType==5" v-loading="qLoading">
       <div class="q-title" v-html="question.title"/>
       <div>
+        <el-input v-model="answer.content" type="hidden" value="" rows="0"  @change="answer.completed = true"/>
+      </div>
+    </div>
+<!--
+    <div v-else-if="qType==5 && qRealType==6" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5" hidden = true @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==7" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
         <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
       </div>
     </div>
+    <div v-else-if="qType==5 && qRealType==8" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==9" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==10" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==11" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==12" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==13" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="textarea" rows="5"  @change="answer.completed = true"/>
+      </div>
+    </div>
+    <div v-else-if="qType==5 && qRealType==14" v-loading="qLoading">
+      <div class="q-title" v-html="question.title"/>
+      <div>
+        <el-input v-model="answer.content" type="text" rows="0"  @change="answer.completed = true"/>
+      </div>
+    </div>
+-->
     <div v-else>
     </div>
   </div>
@@ -73,6 +129,10 @@ export default {
       default: false
     },
     qType: {
+      type: Number,
+      default: 0
+    },
+    qRealType: {
       type: Number,
       default: 0
     }
