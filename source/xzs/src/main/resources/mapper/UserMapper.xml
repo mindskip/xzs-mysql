@@ -25,7 +25,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     id, user_uuid, user_name, password,clear_password, real_name, age, sex, birth_day, user_level, phone,
-    role, status, image_path, create_time, modify_time, last_active_time, deleted, wx_open_id
+    role, status, image_path, create_time, modify_time, last_active_time, deleted, wx_open_id,user_type
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
@@ -262,7 +262,7 @@
       modify_time = #{modifyTime,jdbcType=TIMESTAMP},
       last_active_time = #{lastActiveTime,jdbcType=TIMESTAMP},
       deleted = #{deleted,jdbcType=BIT},
-      wx_open_id = #{wxOpenId,jdbcType=VARCHAR}
+      wx_open_id = #{wxOpenId,jdbcType=VARCHAR},
       user_type = #{userType,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
