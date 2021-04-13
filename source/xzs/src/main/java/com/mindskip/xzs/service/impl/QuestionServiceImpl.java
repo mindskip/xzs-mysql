@@ -83,7 +83,6 @@ public class QuestionServiceImpl extends BaseServiceImpl<Question> implements Qu
         return question;
     }
 
-    @Override
     @Transactional
     public Question batchInsertFullQuestion(QuestionEditRequestVM model, LearnSection section){
         Date now = new Date();

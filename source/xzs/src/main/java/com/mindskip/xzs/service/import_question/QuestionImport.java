@@ -49,7 +49,7 @@ public class QuestionImport {
             question.setInfoTextContentId(content.getId());
             question.setRequestUrl(url);
 
-            question.setQuestionType(QuestionTypeEnum.view.getCode());
+            question.setQuestionType(QuestionTypeEnum.ShortAnswer.getCode());
             question.setGradeLevel(21);
             question.setDeleted(false);
             question.setCreateTime(now);
