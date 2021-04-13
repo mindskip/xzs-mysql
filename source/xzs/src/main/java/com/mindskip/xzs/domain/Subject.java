@@ -14,7 +14,7 @@ public class Subject implements Serializable {
     private String name;
 
     /**
-     * 年级 (1-12) 小学 初中
+     * 年级 (1-12) 小学 初中 高中  大学
      */
     private Integer level;
 
@@ -29,6 +29,12 @@ public class Subject implements Serializable {
     private Integer itemOrder;
 
     private Boolean deleted;
+
+    /**
+     * 学科编码
+     */
+    private String subjectCode;
+
 
     public Integer getId() {
         return id;
@@ -76,5 +82,13 @@ public class Subject implements Serializable {
 
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public String getSubjectCode() {
+        return subjectCode;
+    }
+
+    public void setSubjectCode(String subjectCode) {
+        this.subjectCode = subjectCode;
     }
 }
