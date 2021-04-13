@@ -2,9 +2,11 @@
   <div>
     <el-row  class="do-exam-title">
       <el-col :span="24">
+<!--
         <span :key="item.itemOrder"  v-for="item in answer.answerItems">
              <el-tag :type="questionCompleted(item.completed)" class="do-exam-title-tag" @click="goAnchor('#question-'+item.itemOrder)">{{item.itemOrder}}</el-tag>
         </span>
+-->
         <span class="do-exam-time">
           <label>剩余时间：</label>
           <label>{{formatSeconds(remainTime)}}</label>
@@ -13,9 +15,11 @@
     </el-row>
     <el-row  class="do-exam-title-hidden">
       <el-col :span="24">
+<!--
         <span :key="item.itemOrder"  v-for="item in answer.answerItems">
              <el-tag  class="do-exam-title-tag" >{{item.itemOrder}}</el-tag>
         </span>
+-->
         <span class="do-exam-time">
           <label>剩余时间：</label>
         </span>
@@ -37,7 +41,7 @@
               <el-form-item :key="questionItem.itemOrder" :label="questionItem.itemOrder+'.'"
                             v-for="questionItem in titleItem.questionItems"
                             class="exam-question-item" label-width="50px" :id="'question-'+ questionItem.itemOrder">
-                <QuestionEdit :qType="questionItem.questionType" :question="questionItem"
+                <QuestionEdit :qType="questionItem.questionType"  :qRealType="questionItem.questionRealType" :question="questionItem"
                               :answer="answer.answerItems[questionItem.itemOrder-1]"/>
               </el-form-item>
             </el-card>
