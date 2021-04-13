@@ -8,6 +8,11 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.FormBodyPart;
+import org.apache.http.entity.mime.FormBodyPartBuilder;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicHeader;
@@ -156,6 +161,53 @@ public class HttpClientUtil {
         }
         return null;
 
+    }
+
+    public static String formDataRequest(String url ,List<NameValuePair> request,Map<String,String> headers) throws Exception {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(url);
+
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        builder.setBoundary("----WebKitFormBoundarynxc4XEbb0WE8ceVs");
+
+        if (!CollectionUtils.isEmpty(request))  {
+            for (NameValuePair pair:request) {
+                //FormBodyPart part = FormBodyPartBuilder.create(pair.getName(),new StringBody(pair.getValue(),ContentType.MULTIPART_FORM_DATA.withCharset(Charset.forName("utf-8")))).build();
+                FormBodyPart part1 = new FormBodyPart(pair.getName(),new StringBody(pair.getValue(),ContentType.MULTIPART_FORM_DATA.withCharset(Charset.forName("utf-8"))));
+                part1.getHeader().removeFields("Content-Type");
+                part1.getHeader().removeFields("Content-Transfer-Encoding");
+                builder.addPart(part1);
+            }
+        }
+        if (!CollectionUtils.isEmpty(headers))  {
+            for(Map.Entry<String,String> entry : headers.entrySet()){
+                httpPost.addHeader(entry.getKey(),entry.getValue());
+            }
+        }
+        HttpEntity entity = builder.setContentType(ContentType.MULTIPART_FORM_DATA).setCharset(Charset.forName("utf-8")).build();
+        //entity.writeTo(System.out);
+        httpPost.setEntity(entity);
+
+        try {
+            CloseableHttpResponse response = httpclient.execute(httpPost);
+            try {
+                int code = response.getStatusLine().getStatusCode();
+                String info = response.getStatusLine().getReasonPhrase();
+                System.out.println("----------------------------------------");
+                System.out.println(response.getStatusLine());
+                HttpEntity resEntity = response.getEntity();
+                if (resEntity != null) {
+                    System.out.println("Response content length: " + resEntity.getContentLength());
+                    System.out.println(resEntity);
+                }
+                EntityUtils.consume(resEntity);
+            } finally {
+                response.close();
+            }
+        } finally {
+            httpclient.close();
+        }
+        return null;
     }
 
     public static String post(String url ,Map<String,String> params ,List<NameValuePair> nvps,Map<String,String> headers,String token,String userName) {
