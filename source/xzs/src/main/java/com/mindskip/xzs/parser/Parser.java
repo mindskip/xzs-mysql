@@ -2,10 +2,7 @@ package com.mindskip.xzs.parser;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -13,9 +10,11 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import com.mindskip.xzs.utility.HttpClientUtil;
 import org.apache.commons.io.FileUtils;
+import org.jsoup.Connection;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
+import org.jsoup.helper.HttpConnection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -171,13 +170,16 @@ public class Parser {
         data.put("sesskey","BBVPUDoTc4");
         data.put("slots","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18");
 
+        Collection<Connection.KeyVal> params = new ArrayList<>();
+        HttpConnection.KeyVal param = HttpConnection.KeyVal.create("","");
+        params.add(param);
         Document doc = null;
         try {
             doc = Jsoup.connect(url)
                     .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36")
                     .cookies(cookies)
                     .headers(headers)
-                    .data(data)
+                    .data(params)
                     .timeout(5000)
                     .post();
         } catch (IOException e) {
