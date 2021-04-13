@@ -22,6 +22,9 @@ public interface SubjectMapper  extends BaseMapper<Subject> {
 
     List<Subject> getSubjectByLevel(Integer level);
 
+    List<Subject> getSubjectBySubjectCode(String subjectCode);
+
+
     List<Subject> allSubject();
 
     List<Subject> page(SubjectPageRequestVM requestVM);
