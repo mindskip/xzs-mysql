@@ -85,6 +85,16 @@ public class Question implements Serializable {
      */
     private String subjectCode;
 
+    /**
+     * 问题实际类型
+     */
+    private Integer questionRealType;
+
+    /**
+     * 序号
+     */
+    private Integer sequence;
+
 
     public Integer getId() {
         return id;
@@ -226,6 +236,23 @@ public class Question implements Serializable {
         } else {
             this.setCorrect(correct);
         }
+    }
+
+    public Integer getQuestionRealType() {
+        return questionRealType;
+    }
+
+    public void setQuestionRealType(Integer questionRealType) {
+        this.questionRealType = questionRealType;
+    }
+
+
+    public Integer getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(Integer sequence) {
+        this.sequence = sequence;
     }
 
     @Override
