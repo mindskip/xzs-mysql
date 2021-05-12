@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.io.IOException;
 
 /**
- * @author 武汉思维跳跃科技有限公司
+ * @author 么么哒
  */
 @SpringBootApplication
 @EnableTransactionManagement
