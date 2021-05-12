@@ -2,11 +2,9 @@
   <div>
     <el-row  class="do-exam-title">
       <el-col :span="24">
-<!--
         <span :key="item.itemOrder"  v-for="item in answer.answerItems">
              <el-tag :type="questionCompleted(item.completed)" class="do-exam-title-tag" @click="goAnchor('#question-'+item.itemOrder)">{{item.itemOrder}}</el-tag>
         </span>
--->
         <span class="do-exam-time">
           <label>剩余时间：</label>
           <label>{{formatSeconds(remainTime)}}</label>
@@ -15,11 +13,9 @@
     </el-row>
     <el-row  class="do-exam-title-hidden">
       <el-col :span="24">
-<!--
         <span :key="item.itemOrder"  v-for="item in answer.answerItems">
              <el-tag  class="do-exam-title-tag" >{{item.itemOrder}}</el-tag>
         </span>
--->
         <span class="do-exam-time">
           <label>剩余时间：</label>
         </span>
