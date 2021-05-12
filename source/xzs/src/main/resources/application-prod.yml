@@ -9,3 +9,11 @@ spring:
     username: memeda
     password: 123Qwe!@#
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      validation-timeout: 3000
+      idle-timeout: 60000
+      login-timeout: 5
+      max-lifetime: 60000
+      maximum-pool-size: 5
+      minimum-idle: 2
