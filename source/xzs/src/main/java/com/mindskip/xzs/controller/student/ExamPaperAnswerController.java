@@ -1,36 +1,29 @@
 package com.mindskip.xzs.controller.student;
 
-import com.alibaba.fastjson.JSONObject;
 import com.mindskip.xzs.base.BaseApiController;
 import com.mindskip.xzs.base.RestResponse;
-import com.mindskip.xzs.configuration.application.ApplicationContextProvider;
 import com.mindskip.xzs.domain.*;
 import com.mindskip.xzs.domain.enums.ExamPaperAnswerStatusEnum;
-import com.mindskip.xzs.domain.enums.QuestionTypeEnum;
-import com.mindskip.xzs.domain.question.QuestionObject;
 import com.mindskip.xzs.event.CalculateExamPaperAnswerCompleteEvent;
 import com.mindskip.xzs.event.UserEvent;
-import com.mindskip.xzs.repository.QuestionMapper;
-import com.mindskip.xzs.service.*;
+import com.mindskip.xzs.service.ExamPaperAnswerService;
+import com.mindskip.xzs.service.ExamPaperService;
+import com.mindskip.xzs.service.SubjectService;
 import com.mindskip.xzs.utility.DateTimeUtil;
 import com.mindskip.xzs.utility.ExamUtil;
-import com.mindskip.xzs.utility.Md5Util;
 import com.mindskip.xzs.utility.PageInfoHelper;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditRequestVM;
 import com.mindskip.xzs.viewmodel.student.exam.ExamPaperReadVM;
-import com.mindskip.xzs.viewmodel.student.exam.ExamPaperSubmitItemVM;
 import com.mindskip.xzs.viewmodel.student.exam.ExamPaperSubmitVM;
 import com.mindskip.xzs.viewmodel.student.exampaper.ExamPaperAnswerPageResponseVM;
 import com.mindskip.xzs.viewmodel.student.exampaper.ExamPaperAnswerPageVM;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Date;
-
 
 @RestController("StudentExamPaperAnswerController")
 @RequestMapping(value = "/api/student/exampaper/answer")
@@ -72,32 +65,6 @@ public class ExamPaperAnswerController extends BaseApiController {
     @RequestMapping(value = "/answerSubmit", method = RequestMethod.POST)
     public RestResponse answerSubmit(@RequestBody @Valid ExamPaperSubmitVM examPaperSubmitVM) {
         User user = getCurrentUser();
-        //System.out.println(JSONObject.toJSONString(examPaperSubmitVM, SerializerFeature.PrettyFormat));
-        for (ExamPaperSubmitItemVM itemVM : examPaperSubmitVM.getAnswerItems()) {
-            Question question = ApplicationContextProvider.getBean(QuestionMapper.class).selectByPrimaryKey(itemVM.getQuestionId());
-            Subject subject = subjectService.selectById(question.getSubjectId());
-            int questionType = question.getQuestionType();
-            if (questionType == QuestionTypeEnum.MultipleChoice.getCode()) {
-                TextContent textContent = ApplicationContextProvider.getBean(TextContentService.class).selectById(question.getInfoTextContentId());
-                QuestionObject questionObject = JSONObject.parseObject(textContent.getContent(), QuestionObject.class);
-                question.setQuestionCode(Md5Util.encode(subject.getSubjectCode() + questionObject.getTitleContent()));
-                question.setCorrect(StringUtils.collectionToDelimitedString(itemVM.getContentArray(), ","));
-            } else if (questionType == QuestionTypeEnum.SingleChoice.getCode()) {
-                TextContent textContent = ApplicationContextProvider.getBean(TextContentService.class).selectById(question.getInfoTextContentId());
-                QuestionObject questionObject = JSONObject.parseObject(textContent.getContent(), QuestionObject.class);
-                question.setQuestionCode(Md5Util.encode(subject.getSubjectCode() + questionObject.getTitleContent()));
-                question.setCorrect(itemVM.getContent());
-            } else {
-                TextContent textContent = ApplicationContextProvider.getBean(TextContentService.class).selectById(question.getInfoTextContentId());
-                QuestionObject questionObject = JSONObject.parseObject(textContent.getContent(), QuestionObject.class);
-                question.setCorrect(itemVM.getContent());
-                question.setQuestionCode(Md5Util.encode(subject.getSubjectCode() + questionObject.getTitleContent()));
-            }
-            ApplicationContextProvider.getBean(QuestionMapper.class).updateByPrimaryKey(question);
-            //System.out.println("成功更新答案：");
-            //System.out.println(question.getCorrect());
-            //System.out.println(question.getQuestionCode());
-        }
         ExamPaperAnswerInfo examPaperAnswerInfo = examPaperAnswerService.calculateExamPaperAnswer(examPaperSubmitVM, user);
         if (null == examPaperAnswerInfo) {
             return RestResponse.fail(2, "试卷不能重复做");

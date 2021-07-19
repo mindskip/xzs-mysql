@@ -19,7 +19,7 @@ import java.io.InputStream;
 
 /**
  * 登录参数序列化
- * @author memeda
+ * @author 武汉思维跳跃科技有限公司
  */
 
 public class RestLoginAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
@@ -34,7 +34,6 @@ public class RestLoginAuthenticationFilter extends AbstractAuthenticationProcess
         UsernamePasswordAuthenticationToken authRequest;
         try (InputStream is = request.getInputStream()) {
             AuthenticationBean authenticationBean = JsonUtil.toJsonObject(is, AuthenticationBean.class);
-            authenticationBean.setRemember(true);
             request.setAttribute(TokenBasedRememberMeServices.DEFAULT_PARAMETER, authenticationBean.isRemember());
             authRequest = new UsernamePasswordAuthenticationToken(authenticationBean.getUserName(), authenticationBean.getPassword());
         } catch (IOException e) {

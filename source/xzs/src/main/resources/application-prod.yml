@@ -1,19 +1,11 @@
 logging:
-  path: /logs/xzs/
+  path: /usr/log/xzs/
 
 spring:
   redis:
     host: localhost
   datasource:
-    url: jdbc:mysql://localhost:3306/memeda?useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&allowMultiQueries=true
-    username: memeda
-    password: 123Qwe!@#
+    url: jdbc:mysql://localhost:3306/xzs?useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&allowMultiQueries=true
+    username: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      connection-timeout: 60000
-      validation-timeout: 3000
-      idle-timeout: 60000
-      login-timeout: 5
-      max-lifetime: 60000
-      maximum-pool-size: 5
-      minimum-idle: 2

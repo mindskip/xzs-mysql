@@ -12,10 +12,9 @@ public class UserCreateVM {
     @NotBlank
     private String userName;
 
-    @NotBlank
     private String password;
 
-
+    @NotBlank
     private String realName;
 
     private String age;

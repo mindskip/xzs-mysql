@@ -16,7 +16,6 @@
       <el-table-column prop="id" label="Id" />
       <el-table-column prop="userName" label="用户名"/>
       <el-table-column prop="realName" label="真实姓名" />
-      <el-table-column prop="clearPassword" label="明文密码" />
       <el-table-column prop="sex" label="性别" width="60px;" :formatter="sexFormatter"/>
       <el-table-column prop="phone" label="手机号"/>
       <el-table-column prop="createTime" label="创建时间" width="160px"/>

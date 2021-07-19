@@ -15,8 +15,6 @@ public class User implements Serializable {
 
     private String password;
 
-    private String clearPassword;
-
     private String realName;
 
     private Integer age;
@@ -44,8 +42,6 @@ public class User implements Serializable {
     private Boolean deleted;
 
     private String wxOpenId;
-
-    private Integer userType;
 
     public Integer getId() {
         return id;
@@ -189,21 +185,5 @@ public class User implements Serializable {
 
     public void setWxOpenId(String wxOpenId) {
         this.wxOpenId = wxOpenId == null ? null : wxOpenId.trim();
-    }
-
-    public String getClearPassword() {
-        return clearPassword;
-    }
-
-    public void setClearPassword(String clearPassword) {
-        this.clearPassword = clearPassword;
-    }
-
-    public Integer getUserType() {
-        return userType;
-    }
-
-    public void setUserType(Integer userType) {
-        this.userType = userType;
     }
 }
