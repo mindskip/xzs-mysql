@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 public class UserUpdateVM {
 
+    @NotBlank
     private String realName;
 
     @NotBlank

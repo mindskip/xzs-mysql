@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      title: '么么哒'
+      title: '学之思管理系统'
     }
   }
 }

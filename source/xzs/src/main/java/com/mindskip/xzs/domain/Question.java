@@ -65,37 +65,6 @@ public class Question implements Serializable {
 
     private Boolean deleted;
 
-    /**
-     * 题目编码
-     */
-    private String questionCode;
-
-    /**
-     * 请求URL
-     */
-    private String requestUrl;
-
-    /**
-     * 请求方法
-     */
-    private String requestMethod;
-
-    /**
-     * 学科编码
-     */
-    private String subjectCode;
-
-    /**
-     * 问题实际类型
-     */
-    private Integer questionRealType;
-
-    /**
-     * 序号
-     */
-    private Integer sequence;
-
-
     public Integer getId() {
         return id;
     }
@@ -192,41 +161,6 @@ public class Question implements Serializable {
         this.deleted = deleted;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public String getQuestionCode() {
-        return questionCode;
-    }
-
-    public void setQuestionCode(String questionCode) {
-        this.questionCode = questionCode;
-    }
-
-    public String getRequestUrl() {
-        return requestUrl;
-    }
-
-    public void setRequestUrl(String requestUrl) {
-        this.requestUrl = requestUrl;
-    }
-
-    public String getRequestMethod() {
-        return requestMethod;
-    }
-
-    public void setRequestMethod(String requestMethod) {
-        this.requestMethod = requestMethod;
-    }
-
-    public String getSubjectCode() {
-        return subjectCode;
-    }
-
-    public void setSubjectCode(String subjectCode) {
-        this.subjectCode = subjectCode;
-    }
 
     public void setCorrectFromVM(String correct, List<String> correctArray) {
         int qType = this.getQuestionType();
@@ -236,44 +170,5 @@ public class Question implements Serializable {
         } else {
             this.setCorrect(correct);
         }
-    }
-
-    public Integer getQuestionRealType() {
-        return questionRealType;
-    }
-
-    public void setQuestionRealType(Integer questionRealType) {
-        this.questionRealType = questionRealType;
-    }
-
-
-    public Integer getSequence() {
-        return sequence;
-    }
-
-    public void setSequence(Integer sequence) {
-        this.sequence = sequence;
-    }
-
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id=" + id +
-                ", questionType=" + questionType +
-                ", subjectId=" + subjectId +
-                ", score=" + score +
-                ", gradeLevel=" + gradeLevel +
-                ", difficult=" + difficult +
-                ", correct='" + correct + '\'' +
-                ", infoTextContentId=" + infoTextContentId +
-                ", createUser=" + createUser +
-                ", status=" + status +
-                ", createTime=" + createTime +
-                ", deleted=" + deleted +
-                ", questionCode='" + questionCode + '\'' +
-                ", requestUrl='" + requestUrl + '\'' +
-                ", requestMethod='" + requestMethod + '\'' +
-                ", subjectCode='" + subjectCode + '\'' +
-                '}';
     }
 }
