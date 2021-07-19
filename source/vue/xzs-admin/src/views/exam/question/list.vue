@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParam" ref="queryForm" :inline="true">
-      <el-form-item label="题目编码：">
-        <el-input v-model="queryParam.questionCode" clearable></el-input>
+      <el-form-item label="题目ID：">
+        <el-input v-model="queryParam.id" clearable></el-input>
       </el-form-item>
       <el-form-item label="年级：">
         <el-select v-model="queryParam.level" placeholder="年级"  @change="levelChange" clearable>
@@ -31,12 +31,12 @@
       </el-form-item>
     </el-form>
     <el-table v-loading="listLoading" :data="tableData" border fit highlight-current-row style="width: 100%">
-      <el-table-column prop="questionCode" label="题目编码" width="90px"/>
+      <el-table-column prop="id" label="Id" width="90px"/>
       <el-table-column prop="subjectId" label="学科" :formatter="subjectFormatter" width="120px"/>
       <el-table-column prop="questionType" label="题型" :formatter="questionTypeFormatter" width="70px"/>
       <el-table-column prop="shortTitle" label="题干" show-overflow-tooltip/>
-<!--      <el-table-column prop="score" label="分数" width="60px"/>-->
-<!--      <el-table-column prop="difficult" label="难度" width="60px"/>-->
+      <el-table-column prop="score" label="分数" width="60px"/>
+      <el-table-column prop="difficult" label="难度" width="60px"/>
       <el-table-column prop="createTime" label="创建时间" width="160px"/>
       <el-table-column label="操作" align="center" width="220px">
         <template slot-scope="{row}">
@@ -67,7 +67,6 @@ export default {
       queryParam: {
         id: null,
         questionType: null,
-        questionCode: null,
         level: null,
         subjectId: null,
         pageIndex: 1,
@@ -117,9 +116,6 @@ export default {
       this.questionShow.loading = true
       questionApi.select(row.id).then(re => {
         _this.questionShow.qType = re.response.questionType
-        if (_this.questionShow.qType === 6) {
-          _this.questionShow.qType = 5
-        }
         _this.questionShow.question = re.response
         _this.questionShow.loading = false
       })

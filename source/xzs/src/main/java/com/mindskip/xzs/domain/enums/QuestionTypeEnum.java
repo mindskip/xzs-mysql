@@ -9,16 +9,7 @@ public enum QuestionTypeEnum {
     MultipleChoice(2, "多选题"),
     TrueFalse(3, "判断题"),
     GapFilling(4, "填空题"),
-    ShortAnswer(5, "简答题"),
-
-    page(6, "静态页面(查看) "),
-    forum(7, "讨论区(部分需要额外处理)"),
-    url(8, "观看类(音视频、文章等)"),
-    quiz(9, "章节自测题"),
-    assign(10, "实训(添加文字或文件等)"),
-    resource(11, "资源下载"),
-    glossary(12,"名词术语检索"),
-    feedback(13, "问券调查");
+    ShortAnswer(5, "简答题");
 
     int code;
     String name;

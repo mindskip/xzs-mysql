@@ -10,8 +10,6 @@ public class QuestionResponseVM extends BaseVM {
 
     private Integer questionType;
 
-    private String questionCode;
-
     private Integer textContentId;
 
     private String createTime;
@@ -126,13 +124,5 @@ public class QuestionResponseVM extends BaseVM {
 
     public void setShortTitle(String shortTitle) {
         this.shortTitle = shortTitle;
-    }
-
-    public String getQuestionCode() {
-        return questionCode;
-    }
-
-    public void setQuestionCode(String questionCode) {
-        this.questionCode = questionCode;
     }
 }

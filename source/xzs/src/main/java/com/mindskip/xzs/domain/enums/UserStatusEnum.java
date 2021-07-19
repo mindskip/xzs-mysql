@@ -7,11 +7,7 @@ import java.util.Map;
 public enum UserStatusEnum {
 
     Enable(1, "启用"),
-    Disable(2, "禁用"),
-
-    running(10, "任务运行中"),
-    error(11, "错误"),
-    success(12, "成功");
+    Disable(2, "禁用");
 
     int code;
     String name;

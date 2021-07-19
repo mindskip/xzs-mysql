@@ -6,7 +6,6 @@
     <result column="user_uuid" jdbcType="VARCHAR" property="userUuid" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="clear_password" jdbcType="VARCHAR" property="clearPassword" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
@@ -21,11 +20,10 @@
     <result column="last_active_time" jdbcType="TIMESTAMP" property="lastActiveTime" />
     <result column="deleted" jdbcType="BIT" property="deleted" />
     <result column="wx_open_id" jdbcType="VARCHAR" property="wxOpenId" />
-    <result column="user_type" jdbcType="INTEGER" property="userType" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, user_uuid, user_name, password,clear_password, real_name, age, sex, birth_day, user_level, phone,
-    role, status, image_path, create_time, modify_time, last_active_time, deleted, wx_open_id,user_type
+    id, user_uuid, user_name, password, real_name, age, sex, birth_day, user_level, phone,
+    role, status, image_path, create_time, modify_time, last_active_time, deleted, wx_open_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
@@ -39,18 +37,18 @@
   </delete>
   <insert id="insert" parameterType="com.mindskip.xzs.domain.User" useGeneratedKeys="true" keyProperty="id">
     insert into t_user (id, user_uuid, user_name,
-      password, clear_password,real_name, age,
+      password, real_name, age,
       sex, birth_day, user_level,
       phone, role, status,
       image_path, create_time, modify_time,
-      last_active_time, deleted, wx_open_id,user_type
+      last_active_time, deleted, wx_open_id
       )
     values (#{id,jdbcType=INTEGER}, #{userUuid,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},
-      #{password,jdbcType=VARCHAR}, #{clearPassword,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
+      #{password,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
       #{sex,jdbcType=INTEGER}, #{birthDay,jdbcType=TIMESTAMP}, #{userLevel,jdbcType=INTEGER},
       #{phone,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, #{status,jdbcType=INTEGER},
       #{imagePath,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP},
-      #{lastActiveTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}, #{wxOpenId,jdbcType=VARCHAR},#{userType,jdbcType=INTEGER}
+      #{lastActiveTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}, #{wxOpenId,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.mindskip.xzs.domain.User" useGeneratedKeys="true" keyProperty="id">
@@ -67,9 +65,6 @@
       </if>
       <if test="password != null">
         password,
-      </if>
-      <if test="clearPassword != null">
-        clear_password,
       </if>
       <if test="realName != null">
         real_name,
@@ -113,9 +108,6 @@
       <if test="wxOpenId != null">
         wx_open_id,
       </if>
-      <if test="userType != null">
-        user_type,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -129,9 +121,6 @@
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="clearPassword != null">
-        #{clearPassword,jdbcType=VARCHAR},
       </if>
       <if test="realName != null">
         #{realName,jdbcType=VARCHAR},
@@ -175,9 +164,6 @@
       <if test="wxOpenId != null">
         #{wxOpenId,jdbcType=VARCHAR},
       </if>
-      <if test="userType != null">
-        #{userType,jdbcType=INTEGER},
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.mindskip.xzs.domain.User">
@@ -191,9 +177,6 @@
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="clearPassword != null">
-        clear_password = #{clearPassword,jdbcType=VARCHAR},
       </if>
       <if test="realName != null">
         real_name = #{realName,jdbcType=VARCHAR},
@@ -237,9 +220,6 @@
       <if test="wxOpenId != null">
         wx_open_id = #{wxOpenId,jdbcType=VARCHAR},
       </if>
-      <if test="userType != null">
-        user_type = #{userType,jdbcType=INTEGER},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -248,7 +228,6 @@
     set user_uuid = #{userUuid,jdbcType=VARCHAR},
       user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      clear_password = #{clearPassword,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=INTEGER},
@@ -262,8 +241,7 @@
       modify_time = #{modifyTime,jdbcType=TIMESTAMP},
       last_active_time = #{lastActiveTime,jdbcType=TIMESTAMP},
       deleted = #{deleted,jdbcType=BIT},
-      wx_open_id = #{wxOpenId,jdbcType=VARCHAR},
-      user_type = #{userType,jdbcType=INTEGER}
+      wx_open_id = #{wxOpenId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
