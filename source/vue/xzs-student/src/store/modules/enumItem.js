@@ -2,10 +2,9 @@
 const state = {
   user: {
     sexEnum: [{ key: 1, value: '男' }, { key: 2, value: '女' }],
-    // levelEnum: [{ key: 1, value: '一年级' }, { key: 2, value: '二年级' }, { key: 3, value: '三年级' }, { key: 4, value: '四年级' }, { key: 5, value: '五年级' }, { key: 6, value: '六年级' },
-    //   { key: 7, value: '初一' }, { key: 8, value: '初二' }, { key: 9, value: '初三' },
-    //   { key: 10, value: '高一' }, { key: 11, value: '高二' }, { key: 12, value: '高三' }],
-    levelEnum: [{ key: 21, value: '专科' }, { key: 22, value: '本科' }],
+    levelEnum: [{ key: 1, value: '一年级' }, { key: 2, value: '二年级' }, { key: 3, value: '三年级' }, { key: 4, value: '四年级' }, { key: 5, value: '五年级' }, { key: 6, value: '六年级' },
+      { key: 7, value: '初一' }, { key: 8, value: '初二' }, { key: 9, value: '初三' },
+      { key: 10, value: '高一' }, { key: 11, value: '高二' }, { key: 12, value: '高三' }],
     roleEnum: [{ key: 1, value: '学生' }, { key: 2, value: '教师' }, { key: 3, value: '管理员' }],
     message: {
       readTag: [{ key: true, value: 'success' }, { key: false, value: 'warning' }],
@@ -21,7 +20,7 @@ const state = {
       statusTag: [{ key: 1, value: 'warning' }, { key: 2, value: 'success' }]
     },
     question: {
-      typeEnum: [{ key: 1, value: '单选题' }, { key: 2, value: '多选题' }, { key: 3, value: '判断题' }, { key: 4, value: '填空题' }, { key: 5, value: '简答题' }, { key: 6, value: '阅读题' }],
+      typeEnum: [{ key: 1, value: '单选题' }, { key: 2, value: '多选题' }, { key: 3, value: '判断题' }, { key: 4, value: '填空题' }, { key: 5, value: '简答题' }],
       answer: {
         doRightTag: [{ key: true, value: 'success' }, { key: false, value: 'danger' }, { key: null, value: 'warning' }],
         doRightEnum: [{ key: true, value: '正确' }, { key: false, value: '错误' }, { key: null, value: '待批改' }],
@@ -46,9 +45,6 @@ const mutations = {}
 
 const format = function (array, key) {
   for (let item of array) {
-    if (key === 6) {
-      key = 5
-    }
     if (item.key === key) {
       return item.value
     }

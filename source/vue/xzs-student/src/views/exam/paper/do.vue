@@ -37,7 +37,7 @@
               <el-form-item :key="questionItem.itemOrder" :label="questionItem.itemOrder+'.'"
                             v-for="questionItem in titleItem.questionItems"
                             class="exam-question-item" label-width="50px" :id="'question-'+ questionItem.itemOrder">
-                <QuestionEdit :qType="questionItem.questionType"  :qRealType="questionItem.questionRealType" :question="questionItem"
+                <QuestionEdit :qType="questionItem.questionType" :question="questionItem"
                               :answer="answer.answerItems[questionItem.itemOrder-1]"/>
               </el-form-item>
             </el-card>

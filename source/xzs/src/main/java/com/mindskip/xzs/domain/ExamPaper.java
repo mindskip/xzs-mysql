@@ -37,27 +37,6 @@ public class ExamPaper implements Serializable {
 
     private Integer taskExamId;
 
-    /**
-     * 学习计划ID
-     */
-    private Integer learnArchiveId;
-
-    /**
-     * 学科编码
-     */
-    private String subjectCode;
-
-    /**
-     * 请求地址
-     */
-    private String requestUrl;
-
-    /**
-     * 考试编码
-     */
-    private String examCode;
-
-
     public Integer getId() {
         return id;
     }
@@ -176,41 +155,5 @@ public class ExamPaper implements Serializable {
 
     public void setTaskExamId(Integer taskExamId) {
         this.taskExamId = taskExamId;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public Integer getLearnArchiveId() {
-        return learnArchiveId;
-    }
-
-    public void setLearnArchiveId(Integer learnArchiveId) {
-        this.learnArchiveId = learnArchiveId;
-    }
-
-    public String getSubjectCode() {
-        return subjectCode;
-    }
-
-    public void setSubjectCode(String subjectCode) {
-        this.subjectCode = subjectCode;
-    }
-
-    public String getRequestUrl() {
-        return requestUrl;
-    }
-
-    public void setRequestUrl(String requestUrl) {
-        this.requestUrl = requestUrl;
-    }
-
-    public String getExamCode() {
-        return examCode;
-    }
-
-    public void setExamCode(String examCode) {
-        this.examCode = examCode;
     }
 }

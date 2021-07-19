@@ -1,6 +1,5 @@
 package com.mindskip.xzs.service.impl;
 
-import com.mindskip.xzs.domain.LearnSection;
 import com.mindskip.xzs.domain.other.KeyValue;
 import com.mindskip.xzs.domain.Question;
 import com.mindskip.xzs.domain.TextContent;
@@ -29,7 +28,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 @Service
 public class QuestionServiceImpl extends BaseServiceImpl<Question> implements QuestionService {
@@ -79,41 +77,6 @@ public class QuestionServiceImpl extends BaseServiceImpl<Question> implements Qu
         question.setInfoTextContentId(infoTextContent.getId());
         question.setCreateUser(userId);
         question.setDeleted(false);
-        questionMapper.insertSelective(question);
-        return question;
-    }
-
-    @Transactional
-    public Question batchInsertFullQuestion(QuestionEditRequestVM model, LearnSection section){
-        Date now = new Date();
-        Integer gradeLevel = model.getGradeLevel();
-
-        //题干、解析、选项等 插入
-        TextContent infoTextContent = new TextContent();
-        infoTextContent.setCreateTime(now);
-        setQuestionInfoFromVM(infoTextContent, model);
-        textContentService.insertByFilter(infoTextContent);
-
-        Question question = new Question();
-        question.setSubjectId(model.getSubjectId());
-        question.setGradeLevel(gradeLevel);
-        question.setCreateTime(now);
-        question.setQuestionType(model.getQuestionType());
-        question.setQuestionRealType(model.getQuestionRealType());
-        question.setStatus(QuestionStatusEnum.OK.getCode());
-        question.setCorrectFromVM(model.getCorrect(), model.getCorrectArray());
-        question.setScore(ExamUtil.scoreFromVM(model.getScore()));
-        question.setDifficult(model.getDifficult());
-        question.setInfoTextContentId(infoTextContent.getId());
-        question.setCreateUser(section.getCreateUserId());
-        question.setDeleted(false);
-
-        question.setSubjectCode(section.getSubjectCode());
-        question.setQuestionCode(section.getMidCode());
-        question.setRequestUrl(section.getRequestUrl());
-        question.setRequestMethod("GET");
-
-        question.setSequence(section.getMidOrder());
         questionMapper.insertSelective(question);
         return question;
     }

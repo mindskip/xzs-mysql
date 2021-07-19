@@ -11,8 +11,6 @@ public class UserEventLogVM {
 
     private String userName;
 
-    private String clearPassword;
-
     private String realName;
 
     private String content;
@@ -65,13 +63,5 @@ public class UserEventLogVM {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
-    }
-
-    public String getClearPassword() {
-        return clearPassword;
-    }
-
-    public void setClearPassword(String clearPassword) {
-        this.clearPassword = clearPassword;
     }
 }
