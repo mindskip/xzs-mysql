@@ -18,14 +18,8 @@ public class TextContent implements Serializable {
 
     private Integer id;
 
-    /**
-     * 内容(Json)
-     */
     private String content;
 
-    /**
-     * 创建时间
-     */
     private Date createTime;
 
     public Integer getId() {

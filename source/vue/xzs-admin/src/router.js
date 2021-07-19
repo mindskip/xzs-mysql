@@ -188,24 +188,6 @@ const constantRoutes = [
     ]
   },
   {
-    path: '/answer',
-    component: Layout,
-    name: 'AnswerPage',
-    meta: {
-      title: '成绩管理',
-      icon: 'answer'
-    },
-    alwaysShow: true,
-    children: [
-      {
-        path: 'list',
-        component: () => import('@/views/answer/list'),
-        name: 'AnswerPageList',
-        meta: { title: '答卷列表', noCache: true }
-      }
-    ]
-  },
-  {
     path: '/message',
     component: Layout,
     name: 'MessagePage',

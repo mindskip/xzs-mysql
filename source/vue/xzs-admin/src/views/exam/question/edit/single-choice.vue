@@ -157,13 +157,8 @@ export default {
     },
     questionItemAdd () {
       let items = this.form.items
-      let newLastPrefix
-      if (items.length > 0) {
-        let last = items[items.length - 1]
-        newLastPrefix = String.fromCharCode(last.prefix.charCodeAt() + 1)
-      } else {
-        newLastPrefix = 'A'
-      }
+      let last = items[items.length - 1]
+      let newLastPrefix = String.fromCharCode(last.prefix.charCodeAt() + 1)
       items.push({ id: null, prefix: newLastPrefix, content: '' })
     },
     submitForm () {
