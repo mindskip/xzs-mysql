@@ -1,6 +1,6 @@
 {
   "name": "xzs-student",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "author": "武汉思维跳跃科技有限公司",
   "description": "学之思开源考试系统",
   "license": "AGPL-3.0",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "core-js": "^3.15.2",
+    "core-js": "^3.16.0",
     "element-ui": "^2.15.3",
     "js-cookie": "2.2.0",
     "normalize.css": "8.0.1",
