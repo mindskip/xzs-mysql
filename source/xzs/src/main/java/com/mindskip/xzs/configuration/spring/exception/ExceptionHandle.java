@@ -14,10 +14,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.stream.Collectors;
 
+
+/**
+ * @version 3.5.0
+ * @description:  The type Exception handle.
+ * Copyright (C), 2020-2021, 武汉思维跳跃科技有限公司
+ * @date 2021/12/25 9:45
+ */
 @ControllerAdvice
 public class ExceptionHandle {
     private final static Logger logger = LoggerFactory.getLogger(ExceptionHandle.class);
 
+    /**
+     * Handler rest response.
+     *
+     * @param e the e
+     * @return the rest response
+     */
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public RestResponse handler(Exception e) {
@@ -25,6 +38,12 @@ public class ExceptionHandle {
         return new RestResponse<>(SystemCode.InnerError.getCode(), SystemCode.InnerError.getMessage());
     }
 
+    /**
+     * Handler rest response.
+     *
+     * @param e the e
+     * @return the rest response
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody
     public RestResponse handler(MethodArgumentNotValidException e) {
@@ -35,6 +54,12 @@ public class ExceptionHandle {
         return new RestResponse<>(SystemCode.ParameterValidError.getCode(), errorMsg);
     }
 
+    /**
+     * Handler rest response.
+     *
+     * @param e the e
+     * @return the rest response
+     */
     @ExceptionHandler(BindException.class)
     @ResponseBody
     public RestResponse handler(BindException e) {

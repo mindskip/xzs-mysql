@@ -6,7 +6,10 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * @author 武汉思维跳跃科技有限公司
+ * @version 3.5.0
+ * @description:  The type Application context provider.
+ * Copyright (C), 2020-2021, 武汉思维跳跃科技有限公司
+ * @date 2021/12/25 9:45
  */
 @Component
 public class ApplicationContextProvider implements ApplicationContextAware {
@@ -20,10 +23,24 @@ public class ApplicationContextProvider implements ApplicationContextAware {
         context = applicationContext;
     }
 
+    /**
+     * Gets bean.
+     *
+     * @param <T>    the type parameter
+     * @param aClass the a class
+     * @return the bean
+     */
     public static <T> T getBean(Class<T> aClass) {
         return context.getBean(aClass);
     }
 
+    /**
+     * Gets bean.
+     *
+     * @param <T>  the type parameter
+     * @param name the name
+     * @return the bean
+     */
     @SuppressWarnings("unchecked")
     public static <T> T getBean(String name) {
         return (T) context.getBean(name);

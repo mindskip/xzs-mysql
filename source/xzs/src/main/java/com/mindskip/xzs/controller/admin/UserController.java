@@ -23,10 +23,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-
-/**
- * @author 武汉思维跳跃科技有限公司
- */
 @RestController("AdminUserController")
 @RequestMapping(value = "/api/admin/user")
 public class UserController extends BaseApiController {
