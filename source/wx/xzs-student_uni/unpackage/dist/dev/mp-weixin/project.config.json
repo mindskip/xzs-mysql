@@ -1,0 +1,27 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wxb1f3a01f3d3666f9",
+  "projectname": "xzs-student",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": []
+    }
+  }
+}

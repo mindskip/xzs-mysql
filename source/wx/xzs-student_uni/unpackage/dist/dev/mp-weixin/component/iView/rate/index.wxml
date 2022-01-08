@@ -1,0 +1,11 @@
+<wxs module="parse">
+var prefixCls = 'i-rate';
+module.exports = {
+    getCurrent : function( value,index ){
+        if( index < value  ){
+            return prefixCls + '-current'
+        }
+    }
+}
+</wxs>
+<view data-event-opts="{{[['touchmove',[['handleTouchMove',['$event']]]]]}}" class="i-class i-rate" bindtouchmove="__e"><input class="i-rate-hide-input" type="text" name="{{name}}" wx:value="{{value}}"/><block wx:for="{{count}}" wx:for-item="item" wx:for-index="index" wx:key="*this"><view class="{{['i-rate-star '+parse.getCurrent(value,index)]}}" data-index="{{index}}" data-event-opts="{{[['tap',[['handleClick',['$event']]]]]}}" bindtap="__e"><i-icon vue-id="{{'1b9aa0c2-1-'+index}}" type="collection_fill" size="{{size}}" bind:__l="__l"></i-icon></view></block><block wx:if="{{value!==0}}"><view class="i-rate-text"><slot></slot></view></block></view>
