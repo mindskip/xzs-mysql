@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "i-badge": "/component/iView/badge/index"
-  }
-}

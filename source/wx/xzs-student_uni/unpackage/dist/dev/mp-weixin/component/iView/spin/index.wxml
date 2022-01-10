@@ -1,1 +1,0 @@
-<view class="{{['i-class i-spin i-spin-'+size+' '+(fix?'i-spin-fix':'')+' '+(custom?'i-spin-show-text':'')+' '+(fullscreen?'i-spin-fullscreen':'')]}}"><view class="i-spin-main _div"><view class="i-spin-dot"></view><view class="i-spin-text _div"><slot></slot></view></view></view>

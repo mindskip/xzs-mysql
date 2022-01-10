@@ -1,1 +1,0 @@
-<view class="i-class i-badge"><slot></slot><block wx:if="{{dot}}"><view class="i-badge-dot"></view></block><block wx:else><block wx:if="{{count!==0}}"><view class="i-badge-count i-class-alone">{{finalCountFun}}</view></block></block></view>
