@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['collapse',[['clickfn',['$event']]]]]}}" class="i-class i-collapse" bindcollapse="__e"><slot></slot></view>

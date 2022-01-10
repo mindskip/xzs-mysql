@@ -1,0 +1,1 @@
+<view><i-cell-group class="i-class" vue-id="f41f4672-1" bind:__l="__l" vue-slots="{{['default']}}"><slot></slot></i-cell-group></view>
