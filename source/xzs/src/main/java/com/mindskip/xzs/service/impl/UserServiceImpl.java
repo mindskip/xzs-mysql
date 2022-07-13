@@ -10,8 +10,6 @@ import com.mindskip.xzs.viewmodel.admin.user.UserPageRequestVM;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +21,6 @@ import java.util.Map;
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
-    private final static String CACHE_NAME = "xzs:user";
     private final UserMapper userMapper;
     private final ApplicationEventPublisher eventPublisher;
 
@@ -46,25 +43,21 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     }
 
     @Override
-    @Cacheable(value = CACHE_NAME, key = "#username", unless = "#result == null")
     public User getUserByUserName(String username) {
         return userMapper.getUserByUserName(username);
     }
 
     @Override
-    @CacheEvict(value = CACHE_NAME, key = "#record.userName")
     public int insertByFilter(User record) {
         return super.insertByFilter(record);
     }
 
     @Override
-    @CacheEvict(value = CACHE_NAME, key = "#record.userName")
     public int updateByIdFilter(User record) {
         return super.updateByIdFilter(record);
     }
 
     @Override
-    @CacheEvict(value = CACHE_NAME, key = "#record.userName")
     public int updateById(User record) {
         return super.updateById(record);
     }
@@ -156,7 +149,6 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     }
 
     @Override
-    @CacheEvict(value = CACHE_NAME, key = "#user.userName")
     @Transactional
     public void changePicture(User user, String imagePath) {
         User changePictureUser = new User();
