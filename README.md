@@ -125,7 +125,7 @@
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/4.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://www.mindskip.net/style/git/images/wx/student/5.png"/></td>
+        <td><img src="https://www.mindskip.net/style/git/images/wx/student/10.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/8.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/6.png"/></td>
         <td><img src="https://www.mindskip.net/style/git/images/wx/student/7.png"/></td>
