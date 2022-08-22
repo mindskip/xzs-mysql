@@ -6,6 +6,7 @@ import com.mindskip.xzs.domain.ExamPaper;
 import com.mindskip.xzs.service.ExamPaperService;
 import com.mindskip.xzs.utility.DateTimeUtil;
 import com.mindskip.xzs.utility.PageInfoHelper;
+import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditrandomRequestVM;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperPageRequestVM;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditRequestVM;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamResponseVM;
@@ -55,6 +56,14 @@ public class ExamPaperController extends BaseApiController {
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public RestResponse<ExamPaperEditRequestVM> edit(@RequestBody @Valid ExamPaperEditRequestVM model) {
         ExamPaper examPaper = examPaperService.savePaperFromVM(model, getCurrentUser());
+        ExamPaperEditRequestVM newVM = examPaperService.examPaperToVM(examPaper.getId());
+        return RestResponse.ok(newVM);
+    }
+
+    @RequestMapping(value = "/random", method = RequestMethod.POST)
+    public RestResponse<ExamPaperEditRequestVM> random(@RequestBody @Valid ExamPaperEditrandomRequestVM model) {
+        ExamPaperEditRequestVM paperModel = examPaperService.randomPaper(model);
+        ExamPaper examPaper = examPaperService.savePaperFromVM(paperModel, getCurrentUser());
         ExamPaperEditRequestVM newVM = examPaperService.examPaperToVM(examPaper.getId());
         return RestResponse.ok(newVM);
     }
