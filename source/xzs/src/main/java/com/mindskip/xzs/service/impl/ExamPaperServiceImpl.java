@@ -80,6 +80,7 @@ public class ExamPaperServiceImpl extends BaseServiceImpl<ExamPaper> implements 
 
     @Override
     public ExamPaperEditRequestVM randomPaper(ExamPaperEditrandomRequestVM requestVM) {
+
         ExamPaperEditRequestVM editRequestVM = new ExamPaperEditRequestVM();
         editRequestVM.setLevel(requestVM.getLevel());
         editRequestVM.setLimitDateTime(requestVM.getLimitDateTime());
@@ -88,37 +89,59 @@ public class ExamPaperServiceImpl extends BaseServiceImpl<ExamPaper> implements 
         editRequestVM.setPaperType(requestVM.getPaperType());
         editRequestVM.setSubjectId(requestVM.getSubjectId());
         editRequestVM.setSuggestTime(requestVM.getSuggestTime());
-
         editRequestVM.setTitleItems(new ArrayList<>());
 
-        // 单选题
-        addQuestionItem(editRequestVM, requestVM, requestVM.getRadioQuestionSum(), 1);
-        // 多选题
-        addQuestionItem(editRequestVM, requestVM, requestVM.getMultiSelectQuestionSum(), 2);
+        // 提供性能可以加线程
+        ExamPaperTitleItemVM examPaperTitleItemVM;
+        for (QuestionTypeEnum questionType : QuestionTypeEnum.values()) {
+            // 单选题
+            examPaperTitleItemVM = addQuestionItem(requestVM, questionType);
+            if (examPaperTitleItemVM == null) {
+                continue;
+            }
+            editRequestVM.getTitleItems().add(examPaperTitleItemVM);
+        }
+
         return editRequestVM;
     }
 
     /**
      * 随机抽取题目
-     * @param editRequestVM
-     * @param questionSum
-     * @param questionType 题目类型
+     *
+     * @param requestVM
+     * @param questionType  题目类型
      */
-    private void addQuestionItem(ExamPaperEditRequestVM editRequestVM, ExamPaperEditrandomRequestVM requestVM, int questionSum, int questionType) {
+    private ExamPaperTitleItemVM addQuestionItem(ExamPaperEditrandomRequestVM requestVM, QuestionTypeEnum questionType) {
+
+        if (questionType.getCode() > 2) {
+            // 暂时只有选择题
+            return null;
+        }
+
         QuestionPageRequestVM questionRequest = new QuestionPageRequestVM();
-        questionRequest.setQuestionType(questionType);
+        questionRequest.setQuestionType(questionType.getCode());
         questionRequest.setSubjectId(requestVM.getSubjectId());
         questionRequest.setPageSize(10000);
         List<Question> questionList = questionService.list(questionRequest);
-        // 生成随机数
+
+        if (CollectionUtils.isEmpty(questionList)) {
+            return null;
+        }
+
         ExamPaperTitleItemVM radioQuestionItem = new ExamPaperTitleItemVM();
-        radioQuestionItem.setName("一、单选题");
+        radioQuestionItem.setName(questionType.getSubjectNo());
         radioQuestionItem.setQuestionItems(new ArrayList<>());
+        // 生成随机数
         Random random = new Random(questionList.size());
+
+        int questionSum = requestVM.getQuestionSum().get(questionType.getCode() - 1);
         for (int i = 0; i < questionSum; i++) {
+
             radioQuestionItem.getQuestionItems().add(questionService.getQuestionEditRequestVM(questionList.get(random.nextInt(questionList.size()))));
         }
-        editRequestVM.getTitleItems().add(radioQuestionItem);
+
+        return radioQuestionItem;
+
     }
 
     @Override
