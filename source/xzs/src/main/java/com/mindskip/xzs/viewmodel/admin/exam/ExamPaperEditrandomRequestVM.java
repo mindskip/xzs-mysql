@@ -23,11 +23,8 @@ public class ExamPaperEditrandomRequestVM {
 
     private String score;
 
-    /** 单选题数量*/
-    private Integer radioQuestionSum;
-
-    /** 多选题数量*/
-    private Integer multiSelectQuestionSum;
+    /** 各种题目数量*/
+    private List<Integer> questionSum;
 
     public Integer getId() {
         return id;
@@ -94,42 +91,22 @@ public class ExamPaperEditrandomRequestVM {
     }
 
     /**
-     * get radioQuestionSum
+     * get questionSum
      *
-     * @return radioQuestionSum
+     * @return questionSum
      */
-    public Integer getRadioQuestionSum() {
-        return radioQuestionSum;
+    public List<Integer> getQuestionSum() {
+        return questionSum;
     }
 
     /**
-     * set radioQuestionSum
+     * set questionSum
      *
-     * @param radioQuestionSum radioQuestionSum
+     * @param questionSum questionSum
      * @return ExamPaperEditrandomRequestVM.
      */
-    public ExamPaperEditrandomRequestVM setRadioQuestionSum(Integer radioQuestionSum) {
-        this.radioQuestionSum = radioQuestionSum;
-        return this;
-    }
-
-    /**
-     * get multiSelectQuestionSum
-     *
-     * @return multiSelectQuestionSum
-     */
-    public Integer getMultiSelectQuestionSum() {
-        return multiSelectQuestionSum;
-    }
-
-    /**
-     * set multiSelectQuestionSum
-     *
-     * @param multiSelectQuestionSum multiSelectQuestionSum
-     * @return ExamPaperEditrandomRequestVM.
-     */
-    public ExamPaperEditrandomRequestVM setMultiSelectQuestionSum(Integer multiSelectQuestionSum) {
-        this.multiSelectQuestionSum = multiSelectQuestionSum;
+    public ExamPaperEditrandomRequestVM setQuestionSum(List<Integer> questionSum) {
+        this.questionSum = questionSum;
         return this;
     }
 }
