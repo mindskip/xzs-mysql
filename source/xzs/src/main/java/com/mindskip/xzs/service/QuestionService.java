@@ -11,8 +11,6 @@ public interface QuestionService extends BaseService<Question> {
 
     PageInfo<Question> page(QuestionPageRequestVM requestVM);
 
-    List<Question> list(QuestionPageRequestVM requestVM);
-
     Question insertFullQuestion(QuestionEditRequestVM model, Integer userId);
 
     Question updateFullQuestion(QuestionEditRequestVM model);
