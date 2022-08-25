@@ -3,7 +3,6 @@ package com.mindskip.xzs.service;
 import com.mindskip.xzs.domain.ExamPaper;
 import com.mindskip.xzs.domain.User;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditRequestVM;
-import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditrandomRequestVM;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperPageRequestVM;
 import com.mindskip.xzs.viewmodel.student.dashboard.PaperFilter;
 import com.mindskip.xzs.viewmodel.student.dashboard.PaperInfo;
@@ -19,8 +18,6 @@ public interface ExamPaperService extends BaseService<ExamPaper> {
     PageInfo<ExamPaper> taskExamPage(ExamPaperPageRequestVM requestVM);
 
     PageInfo<ExamPaper> studentPage(ExamPaperPageVM requestVM);
-
-    ExamPaperEditRequestVM randomPaper(ExamPaperEditrandomRequestVM requestVM);
 
     ExamPaper savePaperFromVM(ExamPaperEditRequestVM examPaperEditRequestVM, User user);
 

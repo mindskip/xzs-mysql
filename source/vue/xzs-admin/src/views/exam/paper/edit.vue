@@ -25,22 +25,6 @@
       <el-form-item label="试卷名称："  prop="name" required>
         <el-input v-model="form.name"/>
       </el-form-item>
-
-      <el-form-item label="随机参数：" v-show="random === 1">
-        <div class="ks-random-subject">
-           <el-form-item prop="questionSum1">
-              <el-input v-model="form.questionSum[0]" placeholder="单选题数量">
-                  <template slot="append">道单选题</template>
-              </el-input>
-            </el-form-item>
-            <el-form-item prop="questionSum2">
-              <el-input v-model="form.questionSum[1]" placeholder="多选题数量">
-                  <template slot="append">道多选题</template>
-              </el-input>
-            </el-form-item>
-        </div>
-      </el-form-item>
-
       <el-form-item :key="index" :label="'标题'+(index+1)+'：'" required v-for="(titleItem,index) in form.titleItems">
         <el-input v-model="titleItem.name" style="width: 80%"/>
         <el-button type="text" class="link-left" style="margin-left: 20px" size="mini" @click="addQuestion(titleItem)">
@@ -68,15 +52,7 @@
       <el-form-item>
         <el-button type="primary" @click="submitForm">提交</el-button>
         <el-button @click="resetForm">重置</el-button>
-        <el-dropdown>
-          <el-button type="success">
-            添加题目<i class="el-icon-arrow-down el-icon--right"></i>
-          </el-button>
-          <el-dropdown-menu slot="dropdown">
-            <el-button @click="addTitle">添加标题</el-button>
-            <el-button @click="addRandom">随机添加</el-button>
-          </el-dropdown-menu>
-        </el-dropdown>
+        <el-button type="success" @click="addTitle">添加标题</el-button>
       </el-form-item>
     </el-form>
     <el-dialog :visible.sync="questionPage.showDialog"  width="70%">
@@ -131,11 +107,9 @@ export default {
         limitDateTime: [],
         name: '',
         suggestTime: null,
-        titleItems: [],
-        questionSum: [0, 0]
+        titleItems: []
       },
       subjectFilter: null,
-      random: 0,
       formLoading: false,
       rules: {
         level: [
@@ -180,8 +154,6 @@ export default {
     if (id && parseInt(id) !== 0) {
       _this.formLoading = true
       examPaperApi.select(id).then(re => {
-        // TODO 随机生成这里简单做，结合编辑，后面处理questionSum
-        re.response.questionSum = [0, 0]
         _this.form = re.response
         _this.formLoading = false
       })
@@ -193,34 +165,19 @@ export default {
       this.$refs.form.validate((valid) => {
         if (valid) {
           this.formLoading = true
-          if (this.random === 1) {
-            console.log(this.form)
-            examPaperApi.random(this.form).then(re => {
-              if (re.code === 1) {
-                _this.$message.success(re.message)
-                this.formLoading = false
-              } else {
-                _this.$message.error(re.message)
-                this.formLoading = false
-              }
-            }).catch(e => {
+          examPaperApi.edit(this.form).then(re => {
+            if (re.code === 1) {
+              _this.$message.success(re.message)
+              _this.delCurrentView(_this).then(() => {
+                _this.$router.push('/exam/paper/list')
+              })
+            } else {
+              _this.$message.error(re.message)
               this.formLoading = false
-            })
-          } else {
-            examPaperApi.edit(this.form).then(re => {
-              if (re.code === 1) {
-                _this.$message.success(re.message)
-                _this.delCurrentView(_this).then(() => {
-                  _this.$router.push('/exam/paper/list')
-                })
-              } else {
-                _this.$message.error(re.message)
-                this.formLoading = false
-              }
-            }).catch(e => {
-              this.formLoading = false
-            })
-          }
+            }
+          }).catch(e => {
+            this.formLoading = false
+          })
         } else {
           return false
         }
@@ -231,11 +188,6 @@ export default {
         name: '',
         questionItems: []
       })
-      this.random = 0
-    },
-    addRandom () {
-      this.random = 1
-      this.form.titleItems = []
     },
     addQuestion (titleItem) {
       this.currentTitleItem = titleItem
@@ -296,8 +248,7 @@ export default {
         limitDateTime: [],
         name: '',
         suggestTime: null,
-        titleItems: [],
-        questionSum: [0, 0]
+        titleItems: []
       }
       this.form.id = lastId
     },
@@ -321,10 +272,7 @@ export default {
     .q-title {
       margin: 0px 5px 0px 5px;
     }
+    .q-item-content {
+    }
   }
-.ks-random-subject {
-  padding: 8px 16px;
-  width: 200px;
-  text-align: right;
-}
 </style>
