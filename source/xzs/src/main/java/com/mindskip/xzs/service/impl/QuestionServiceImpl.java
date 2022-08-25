@@ -52,6 +52,10 @@ public class QuestionServiceImpl extends BaseServiceImpl<Question> implements Qu
         );
     }
 
+    @Override
+    public List<Question> list(QuestionPageRequestVM requestVM) {
+        return questionMapper.page(requestVM);
+    }
 
     @Override
     @Transactional
