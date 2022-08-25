@@ -1,6 +1,5 @@
 package com.mindskip.xzs.service.impl;
 
-import com.mindskip.xzs.domain.*;
 import com.mindskip.xzs.domain.TextContent;
 import com.mindskip.xzs.domain.enums.ExamPaperTypeEnum;
 import com.mindskip.xzs.domain.exam.ExamPaperQuestionItemObject;
@@ -18,9 +17,11 @@ import com.mindskip.xzs.utility.JsonUtil;
 import com.mindskip.xzs.utility.ModelMapperSingle;
 import com.mindskip.xzs.utility.ExamUtil;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditRequestVM;
+import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperEditrandomRequestVM;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperPageRequestVM;
 import com.mindskip.xzs.viewmodel.admin.exam.ExamPaperTitleItemVM;
 import com.mindskip.xzs.viewmodel.admin.question.QuestionEditRequestVM;
+import com.mindskip.xzs.viewmodel.admin.question.QuestionPageRequestVM;
 import com.mindskip.xzs.viewmodel.student.dashboard.PaperFilter;
 import com.mindskip.xzs.viewmodel.student.dashboard.PaperInfo;
 import com.mindskip.xzs.viewmodel.student.exam.ExamPaperPageVM;
@@ -34,9 +35,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -79,6 +78,71 @@ public class ExamPaperServiceImpl extends BaseServiceImpl<ExamPaper> implements 
                 examPaperMapper.studentPage(requestVM));
     }
 
+    @Override
+    public ExamPaperEditRequestVM randomPaper(ExamPaperEditrandomRequestVM requestVM) {
+
+        ExamPaperEditRequestVM editRequestVM = new ExamPaperEditRequestVM();
+        editRequestVM.setLevel(requestVM.getLevel());
+        editRequestVM.setLimitDateTime(requestVM.getLimitDateTime());
+        editRequestVM.setScore(requestVM.getScore());
+        editRequestVM.setName(requestVM.getName());
+        editRequestVM.setPaperType(requestVM.getPaperType());
+        editRequestVM.setSubjectId(requestVM.getSubjectId());
+        editRequestVM.setSuggestTime(requestVM.getSuggestTime());
+        editRequestVM.setTitleItems(new ArrayList<>());
+
+        // 提供性能可以加线程
+        ExamPaperTitleItemVM examPaperTitleItemVM;
+        for (QuestionTypeEnum questionType : QuestionTypeEnum.values()) {
+            // 单选题
+            examPaperTitleItemVM = addQuestionItem(requestVM, questionType);
+            if (examPaperTitleItemVM == null) {
+                continue;
+            }
+            editRequestVM.getTitleItems().add(examPaperTitleItemVM);
+        }
+
+        return editRequestVM;
+    }
+
+    /**
+     * 随机抽取题目
+     *
+     * @param requestVM
+     * @param questionType  题目类型
+     */
+    private ExamPaperTitleItemVM addQuestionItem(ExamPaperEditrandomRequestVM requestVM, QuestionTypeEnum questionType) {
+
+        if (questionType.getCode() > 2) {
+            // 暂时只有选择题
+            return null;
+        }
+
+        QuestionPageRequestVM questionRequest = new QuestionPageRequestVM();
+        questionRequest.setQuestionType(questionType.getCode());
+        questionRequest.setSubjectId(requestVM.getSubjectId());
+        questionRequest.setPageSize(10000);
+        List<Question> questionList = questionService.list(questionRequest);
+
+        if (CollectionUtils.isEmpty(questionList)) {
+            return null;
+        }
+
+        ExamPaperTitleItemVM radioQuestionItem = new ExamPaperTitleItemVM();
+        radioQuestionItem.setName(questionType.getSubjectNo());
+        radioQuestionItem.setQuestionItems(new ArrayList<>());
+        // 生成随机数
+        Random random = new Random(questionList.size());
+
+        int questionSum = requestVM.getQuestionSum().get(questionType.getCode() - 1);
+        for (int i = 0; i < questionSum; i++) {
+
+            radioQuestionItem.getQuestionItems().add(questionService.getQuestionEditRequestVM(questionList.get(random.nextInt(questionList.size()))));
+        }
+
+        return radioQuestionItem;
+
+    }
 
     @Override
     @Transactional
