@@ -196,6 +196,9 @@
       <if test="questionType != null ">
         and question_type= #{questionType}
       </if>
+      <if test="content != null">
+        and info_text_content_id in (SELECT id FROM t_text_content WHERE content like concat('%',#{content},'%') )
+      </if>
     </where>
   </select>
 
