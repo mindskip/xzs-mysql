@@ -1,4 +1,4 @@
-import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 id="_4-1-学生端" tabindex="-1"><a class="header-anchor" href="#_4-1-学生端" aria-hidden="true">#</a> 4.1 学生端</h1><h3 id="_4-1-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-1-1-登录" aria-hidden="true">#</a> 4.1.1 登录</h3><ul><li>接口地址：/api/user/login</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
+import{_ as e,o as i,c as n,e as u}from"./app.34b9da9d.js";const d={},s=u(`<h1 id="_4-1-学生端" tabindex="-1"><a class="header-anchor" href="#_4-1-学生端" aria-hidden="true">#</a> 4.1 学生端</h1><h3 id="_4-1-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-1-1-登录" aria-hidden="true">#</a> 4.1.1 登录</h3><ul><li>接口地址：/api/user/login</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
     &quot;userName&quot;: &quot;student&quot;,  //用户名
     &quot;password&quot;: &quot;&quot;,  //密码
     &quot;remember&quot;: false  //下次自动登录
@@ -35,7 +35,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-1-5-任务中心" tabindex="-1"><a class="header-anchor" href="#_4-1-5-任务中心" aria-hidden="true">#</a> 4.1.5 任务中心</h3><ul><li>接口地址：/api/student/dashboard/task</li><li>请求参数：无</li><li>返回参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>[
         {
-            &quot;id&quot;: 36,  //任务id
+            &quot;id&quot;: 28,  //任务id
             &quot;title&quot;: &quot;2021-04-25作业&quot;,  //任务标题
             &quot;paperItems&quot;: [
                 {
@@ -88,7 +88,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 36,  //试卷id
+        &quot;id&quot;: 28,  //试卷id
         &quot;level&quot;: 1,  //年级
         &quot;subjectId&quot;: 1,  //学科
         &quot;paperType&quot;: 1,  //试卷类型
@@ -100,7 +100,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
                 &quot;name&quot;: &quot;一、选择题&quot;,  //试卷标题
                 &quot;questionItems&quot;: [
                     {
-                        &quot;id&quot;: 36,      //题目id
+                        &quot;id&quot;: 28,      //题目id
                         &quot;questionType&quot;: 5,  //题型
                         &quot;subjectId&quot;: 1,  //学科
                         &quot;title&quot;: &quot;默写咏鹅&quot;,  //标题
@@ -146,7 +146,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
         &quot;paper&quot;: {  //试卷信息
-            &quot;id&quot;: 36,  //试卷id
+            &quot;id&quot;: 28,  //试卷id
             &quot;level&quot;: 1, //年级
             &quot;subjectId&quot;: 1,  //学科
             &quot;paperType&quot;: 4,  //试卷类型
@@ -161,7 +161,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
                     &quot;name&quot;: &quot;一、完成题目&quot;,  //标题
                     &quot;questionItems&quot;: [   //题目列表
                         {
-                            &quot;id&quot;: 36,  //题目id
+                            &quot;id&quot;: 28,  //题目id
                             &quot;questionType&quot;: 4,   //题目类型
                             &quot;subjectId&quot;: 1,  //学科
                             &quot;title&quot;: &quot;曲项向天歌红掌拨清波&quot;,  //题目标题
@@ -194,12 +194,12 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
             &quot;score&quot;: &quot;18&quot;   //试卷分数
         },
         &quot;answer&quot;: {  //答卷信息
-            &quot;id&quot;: 36,  //答卷id
+            &quot;id&quot;: 28,  //答卷id
             &quot;doTime&quot;: 14,  //耗时
             &quot;score&quot;: &quot;2&quot;,  //得分
             &quot;answerItems&quot;: [   //答题信息
                 {
-                    &quot;id&quot;: 36,  //答题id
+                    &quot;id&quot;: 28,  //答题id
                     &quot;questionId&quot;: 4,  //题目id
                     &quot;doRight&quot;: null,  //是否正确
                     &quot;content&quot;: null, //答题内容
@@ -216,12 +216,12 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-1-11-试卷批改" tabindex="-1"><a class="header-anchor" href="#_4-1-11-试卷批改" aria-hidden="true">#</a> 4.1.11 试卷批改</h3><ul><li>接口地址：/api/student/exampaper/answer/edit</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 36,  //答卷id
+    &quot;id&quot;: 28,  //答卷id
     &quot;doTime&quot;: 14,  //耗时
     &quot;score&quot;: &quot;2&quot;,  //得分数
     &quot;answerItems&quot;: [
         {
-            &quot;id&quot;: 36, //答题id
+            &quot;id&quot;: 28, //答题id
             &quot;questionId&quot;: 4, //题目id
             &quot;doRight&quot;: null,  //是否正确
             &quot;content&quot;: null,  //答题内容
@@ -347,7 +347,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 36,
+        &quot;id&quot;: 28,
         &quot;userUuid&quot;: &quot;d2d29da2-dcb3-4013-b874-727626236f47&quot;,
         &quot;userName&quot;: &quot;student&quot;,  //用户名
         &quot;realName&quot;: &quot;Test&quot;,  //真实姓名
@@ -366,7 +366,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-1-17-修改用户信息" tabindex="-1"><a class="header-anchor" href="#_4-1-17-修改用户信息" aria-hidden="true">#</a> 4.1.17 修改用户信息</h3><ul><li>接口地址：/api/student/user/update</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 36,
+    &quot;id&quot;: 28,
     &quot;userUuid&quot;: &quot;d2d29da2-dcb3-4013-b874-727626236f47&quot;,
     &quot;userName&quot;: &quot;student&quot;,  //用户名
     &quot;realName&quot;: &quot;Test&quot;,  //真实姓名
@@ -399,7 +399,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.d2c07b57.js";const d={},s=u(`<h1 i
         &quot;total&quot;: 5,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 36,
+                &quot;id&quot;: 28,
                 &quot;title&quot;: &quot;rwerw&quot;,   //消息标题
                 &quot;messageId&quot;: 10,
                 &quot;content&quot;: &quot;sfsdf&quot;,  //消息内容
