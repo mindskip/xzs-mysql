@@ -1,4 +1,4 @@
-import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 id="_4-2-小程序" tabindex="-1"><a class="header-anchor" href="#_4-2-小程序" aria-hidden="true">#</a> 4.2 小程序</h1><h3 id="_4-2-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-2-1-登录" aria-hidden="true">#</a> 4.2.1 登录</h3><ul><li>接口地址：/api/wx/student/auth/bind</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>     userName: student  //用户名
+import{_ as e,o as i,c as n,e as u}from"./app.a53ec3b2.js";const d={},s=u(`<h1 id="_4-2-小程序" tabindex="-1"><a class="header-anchor" href="#_4-2-小程序" aria-hidden="true">#</a> 4.2 小程序</h1><h3 id="_4-2-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-2-1-登录" aria-hidden="true">#</a> 4.2.1 登录</h3><ul><li>接口地址：/api/wx/student/auth/bind</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>     userName: student  //用户名
      password: 123456   //密码
      code: 023BNuFa1CQ14B07KVHa16RHM94BNuF0   //授权码
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>返回参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
@@ -33,7 +33,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
     &quot;response&quot;: {
         &quot;fixedPaper&quot;: [  //固定试卷
             {
-                &quot;id&quot;: 19,  //试卷id
+                &quot;id&quot;: 84,  //试卷id
                 &quot;name&quot;: &quot;aaa&quot;,  //试卷名称
                 &quot;limitStartTime&quot;: null,
                 &quot;limitEndTime&quot;: null
@@ -41,7 +41,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
         ],
         &quot;timeLimitPaper&quot;: [  //时段试卷
             {
-                &quot;id&quot;: 19,  //试卷id
+                &quot;id&quot;: 84,  //试卷id
                 &quot;name&quot;: &quot;202008705&quot;,  //试卷名称
                 &quot;limitStartTime&quot;: 1600704000000,
                 &quot;limitEndTime&quot;: 1664985600000,
@@ -64,7 +64,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: [
         {
-            &quot;id&quot;: 19,
+            &quot;id&quot;: 84,
             &quot;title&quot;: &quot;基础任务&quot;, //任务标题
             &quot;paperItems&quot;: [
                 {
@@ -87,7 +87,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
         &quot;total&quot;: 9,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 19,
+                &quot;id&quot;: 84,
                 &quot;name&quot;: &quot;固定试卷&quot;, //试卷名称
                 &quot;questionCount&quot;: 1, //题目数量
                 &quot;score&quot;: 50, //分数
@@ -110,7 +110,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 19, //试卷id
+        &quot;id&quot;: 84, //试卷id
         &quot;level&quot;: 1,  //年级
         &quot;subjectId&quot;: 4,  //学科
         &quot;paperType&quot;: 1,  //试卷类型
@@ -122,7 +122,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
                 &quot;name&quot;: &quot;一、解答题&quot;,  //标题名称
                 &quot;questionItems&quot;: [  //题目列表
                     {
-                        &quot;id&quot;: 19,  //题目id
+                        &quot;id&quot;: 84,  //题目id
                         &quot;questionType&quot;: 1, //题目类型
                         &quot;subjectId&quot;: 4, //学科
                         &quot;title&quot;: &quot;中华四大名著都有哪些，下列正确的是&quot;,  //题干
@@ -192,7 +192,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 19,
+        &quot;id&quot;: 84,
         &quot;userUuid&quot;: &quot;d2d29da2-dcb3-4013-b874-727626236f47&quot;, //用户uuid
         &quot;userName&quot;: &quot;student&quot;, //用户名
         &quot;realName&quot;: &quot;学生&quot;, //真实姓名
@@ -220,7 +220,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 19,
+        &quot;id&quot;: 84,
         &quot;userUuid&quot;: &quot;d2d29da2-dcb3-4013-b874-727626236f47&quot;,  //用户uuid
         &quot;userName&quot;: &quot;student&quot;, //用户名
         &quot;realName&quot;: &quot;学生&quot;,  //真实姓名
@@ -262,7 +262,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
         &quot;total&quot;: 7,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 19, //消息
+                &quot;id&quot;: 84, //消息
                 &quot;title&quot;: &quot;国庆假说明&quot;,  //消息标题
                 &quot;messageId&quot;: 17,  //消息id
                 &quot;content&quot;: &quot;假期七天请注意安全。。。&quot;,  //消息内容
@@ -277,7 +277,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.ca93055d.js";const d={},s=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 19,
+        &quot;id&quot;: 84,
         &quot;title&quot;: &quot;国庆假说明&quot;,  //消息标题
         &quot;content&quot;: &quot;假期七天请注意安全。。。&quot;,  //消息内容
         &quot;createTime&quot;: &quot;2021-09-25 14:51:32&quot;,  //创建时间
