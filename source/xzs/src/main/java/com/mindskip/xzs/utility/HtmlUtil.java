@@ -86,7 +86,7 @@ public class HtmlUtil {
         escape.add(new SimpleEscapedString("<|>", "<alt>$0</alt>"));
     }
 
-    public static String alert(String text) {
+    public static String filter(String text) {
         if (Objects.requireNonNull(text).isEmpty()) return text;
         for (EscapedString escapedString : escape) {
             text = escapedString.alert(text);
