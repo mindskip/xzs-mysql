@@ -48,21 +48,9 @@ public class ExamUtil {
      * @return the string
      */
     public static String secondToVM(Integer second) {
-        String dateTimes;
-        long days = second / (60 * 60 * 24);
-        long hours = (second % (60 * 60 * 24)) / (60 * 60);
-        long minutes = (second % (60 * 60)) / 60;
-        long seconds = second % 60;
-        if (days > 0) {
-            dateTimes = days + "天 " + hours + "时 " + minutes + "分 " + seconds + "秒";
-        } else if (hours > 0) {
-            dateTimes = hours + "时 " + minutes + "分 " + seconds + "秒";
-        } else if (minutes > 0) {
-            dateTimes = minutes + "分 " + seconds + "秒";
-        } else {
-            dateTimes = seconds + " 秒";
-        }
-        return dateTimes;
+//        将这个的主要实现放在DateTimeUtil中
+//    这个函数多用于前后端交互时对于前端的数据整理，但是这个并非后端的工作内容，建议交给前端处理，这样可以减轻服务器负载
+        return  DateTimeUtil.secondToVM(second);
     }
 
     private static final String ANSWER_SPLIT = ",";

@@ -96,7 +96,7 @@ public class DateTimeUtil {
         cale.add(Calendar.MONTH, 0);
         cale.set(Calendar.DAY_OF_MONTH, 1);
         String dateStr = formatter.format(cale.getTime());
-        return parse(dateStr, "yyyy-MM-dd HH:mm:ss");
+        return parse(dateStr, STANDER_FORMAT);
     }
 
     /**
@@ -127,7 +127,7 @@ public class DateTimeUtil {
         List<String> mothDays = new ArrayList<>(mothDayCount);
         Calendar startCalendar = new GregorianCalendar();
         startCalendar.setTime(startTime);
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat(STANDER_SHORT_FORMAT);
         mothDays.add(formatter.format(startTime));
         for (int i = 0; i < mothDayCount - 1; i++) {
             startCalendar.add(Calendar.DATE, 1);
@@ -152,5 +152,28 @@ public class DateTimeUtil {
             list.add(String.valueOf(i));
         }
         return list;
+    }
+
+    public static String secondToVM(Integer second) {
+//        包装类的自动拆箱可能出现问题。
+        if (second == null) {
+            return "0秒";
+        }
+        String dateTimes;
+
+        int days = second / (60 * 60 * 24);
+        int hours = (second % (60 * 60 * 24)) / (60 * 60);
+        int minutes = (second % (60 * 60)) / 60;
+        int seconds = second % 60;
+        if (days > 0) {
+            dateTimes = String.format("%d天%d时%d分%d秒", days, hours, minutes, seconds);
+        } else if (hours > 0) {
+            dateTimes = String.format("%d时%d分%d秒", hours, minutes, seconds);
+        } else if (minutes > 0) {
+            dateTimes = String.format("%d分%d秒", minutes, seconds);
+        } else {
+            dateTimes = String.format("%d秒", seconds);
+        }
+        return dateTimes;
     }
 }

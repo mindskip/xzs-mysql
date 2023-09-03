@@ -24,6 +24,7 @@ public class PageInfoHelper {
      */
     public static <T, J> PageInfo<J> copyMap(PageInfo<T> source, Function<? super T, ? extends J> mapper) {
         PageInfo<J> newPage = new PageInfo<>();
+//        todo: 建议使用BeanUtils#copyProperties
         newPage.setPageNum(source.getPageNum());
         newPage.setPageSize(source.getPageSize());
         newPage.setSize(source.getSize());
