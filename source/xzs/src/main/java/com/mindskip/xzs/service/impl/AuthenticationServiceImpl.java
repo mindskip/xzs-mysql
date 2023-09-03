@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
 
@@ -37,15 +38,16 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public boolean authUser(User user, String username, String password) {
-        if (user == null) {
+//        不推荐在对比信息时，将重要信息（pwd）解密，一次改为将输入进行加密对比，同时也能防止用户通过利用equal的时间长度判断密码长度
+        if (user == null || password == null) {
             return false;
         }
         String encodePwd = user.getPassword();
         if (null == encodePwd || encodePwd.length() == 0) {
             return false;
         }
-        String pwd = pwdDecode(encodePwd);
-        return pwd.equals(password);
+        String pwd = pwdEncode(password);
+        return pwd.equals(encodePwd);
     }
 
     @Override
