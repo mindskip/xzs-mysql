@@ -1,4 +1,4 @@
-import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 id="_4-3-管理端" tabindex="-1"><a class="header-anchor" href="#_4-3-管理端" aria-hidden="true">#</a> 4.3 管理端</h1><h3 id="_4-3-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-3-1-登录" aria-hidden="true">#</a> 4.3.1 登录</h3><ul><li>接口地址：/api/user/login</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
+import{_ as e,o as i,c as n,e as u}from"./app.44c523e6.js";const l={},d=u(`<h1 id="_4-3-管理端" tabindex="-1"><a class="header-anchor" href="#_4-3-管理端" aria-hidden="true">#</a> 4.3 管理端</h1><h3 id="_4-3-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-3-1-登录" aria-hidden="true">#</a> 4.3.1 登录</h3><ul><li>接口地址：/api/user/login</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
     &quot;userName&quot;: &quot;admin&quot;,  //用户名
     &quot;password&quot;: &quot;&quot;,  //密码
     &quot;remember&quot;: false  //记住我
@@ -152,7 +152,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: [
         {
-            &quot;id&quot;: 20,  //学科id
+            &quot;id&quot;: 61,  //学科id
             &quot;name&quot;: &quot;语文&quot;,  //学科名称
             &quot;level&quot;: 1,  //年级
             &quot;levelName&quot;: &quot;一年级&quot;,  //年级名称
@@ -173,7 +173,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 2,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,
+                &quot;id&quot;: 61,
                 &quot;name&quot;: &quot;数学&quot;,  //学科名称
                 &quot;level&quot;: 1,  //年级
                 &quot;levelName&quot;: &quot;一年级&quot;  //年级名称
@@ -185,14 +185,14 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 20,
+        &quot;id&quot;: 61,
         &quot;name&quot;: &quot;数学&quot;,  //学科名称
         &quot;level&quot;: 1,    //年级
         &quot;levelName&quot;: &quot;一年级&quot;   //年级名称
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-12-学科编辑" tabindex="-1"><a class="header-anchor" href="#_4-3-12-学科编辑" aria-hidden="true">#</a> 4.3.12 学科编辑</h3><ul><li>接口地址：/api/admin/education/subject/edit</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 20,
+    &quot;id&quot;: 61,
     &quot;name&quot;: &quot;数学&quot;,  //学科名称
     &quot;level&quot;: 2,   //年级
     &quot;levelName&quot;: &quot;二年级&quot;  //年级名称
@@ -221,7 +221,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 9,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,     //试卷id
+                &quot;id&quot;: 61,     //试卷id
                 &quot;name&quot;: &quot;中级任务二&quot;,    //试卷名称
                 &quot;questionCount&quot;: 5,  //题目总数
                 &quot;score&quot;: 180, //试卷分数
@@ -238,7 +238,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 20,   //试卷id
+        &quot;id&quot;: 61,   //试卷id
         &quot;level&quot;: 1,  //年级
         &quot;subjectId&quot;: 1,  //学科
         &quot;paperType&quot;: 1,  //试卷类型
@@ -250,7 +250,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
                 &quot;name&quot;: &quot;一、选择题&quot;,  //试卷标题
                 &quot;questionItems&quot;: [
                     {
-                        &quot;id&quot;: 20,   //题目id
+                        &quot;id&quot;: 61,   //题目id
                         &quot;questionType&quot;: 5,  //题目类型
                         &quot;subjectId&quot;: 1,  //学科
                         &quot;title&quot;: &quot;默写咏鹅&quot;, //题干
@@ -270,7 +270,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-16-试卷编辑" tabindex="-1"><a class="header-anchor" href="#_4-3-16-试卷编辑" aria-hidden="true">#</a> 4.3.16 试卷编辑</h3><ul><li>接口地址：/api/admin/exam/paper/edit</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 20,  //试卷id
+    &quot;id&quot;: 61,  //试卷id
     &quot;level&quot;: 1,  //年级
     &quot;subjectId&quot;: 1,  //学科
     &quot;paperType&quot;: 6,  //试卷类型
@@ -282,7 +282,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
             &quot;name&quot;: &quot;一、选择题&quot;,  //标题
             &quot;questionItems&quot;: [   //题目列表
                 {
-                    &quot;id&quot;: 20,   //题目id
+                    &quot;id&quot;: 61,   //题目id
                     &quot;questionType&quot;: 2,  //题型
                     &quot;subjectId&quot;: 1,  //学科
                     &quot;title&quot;: &quot;以下哪些诗句是静夜思的？&quot;,  //题干
@@ -314,7 +314,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 20,  //试卷id
+        &quot;id&quot;: 61,  //试卷id
         &quot;level&quot;: 1,  //年级
         &quot;subjectId&quot;: 1,   //学科
         &quot;paperType&quot;: 6,   //试卷类型
@@ -326,7 +326,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
                 &quot;name&quot;: &quot;一、选择题&quot;,  //标题
                 &quot;questionItems&quot;: [
                     {
-                        &quot;id&quot;: 20,   //题目id
+                        &quot;id&quot;: 61,   //题目id
                         &quot;questionType&quot;: 2,    //题型
                         &quot;subjectId&quot;: 1,   //学科
                         &quot;title&quot;: &quot;以下哪些诗句是静夜思的？&quot;,   //题干
@@ -374,7 +374,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 1,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,
+                &quot;id&quot;: 61,
                 &quot;name&quot;: &quot;任务试卷五&quot;,   //试卷名称
                 &quot;questionCount&quot;: 2,   //题目总数
                 &quot;score&quot;: 60,   //试卷分数
@@ -402,7 +402,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 7,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,
+                &quot;id&quot;: 61,
                 &quot;questionType&quot;: 5,  //题型
                 &quot;textContentId&quot;: null,
                 &quot;createTime&quot;: &quot;2021-01-21 11:45:57&quot;,  //创建时间
@@ -437,7 +437,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-21-题目编辑" tabindex="-1"><a class="header-anchor" href="#_4-3-21-题目编辑" aria-hidden="true">#</a> 4.3.21 题目编辑</h3><ul><li>接口地址：/api/admin/question/edit</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 20, //题目id
+    &quot;id&quot;: 61, //题目id
     &quot;questionType&quot;: 5, //题型
     &quot;subjectId&quot;: 1,  //学科
     &quot;title&quot;: &quot;默写咏鹅&quot;,   //题干
@@ -472,7 +472,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 2,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,   //任务id
+                &quot;id&quot;: 61,   //任务id
                 &quot;title&quot;: &quot;中级任务&quot;,   //任务标题
                 &quot;gradeLevel&quot;: 1,  //年级
                 &quot;createUserName&quot;: &quot;admin&quot;,  //创建人用户名
@@ -486,7 +486,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 20,  //任务id
+        &quot;id&quot;: 61,  //任务id
         &quot;gradeLevel&quot;: 12,  //年级
         &quot;title&quot;: &quot;考试&quot;,  //任务标题
         &quot;paperItems&quot;: [
@@ -506,12 +506,12 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-25-任务编辑" tabindex="-1"><a class="header-anchor" href="#_4-3-25-任务编辑" aria-hidden="true">#</a> 4.3.25 任务编辑</h3><ul><li>接口地址：/api/admin/task/edit</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 20,
+    &quot;id&quot;: 61,
     &quot;gradeLevel&quot;: 1,
     &quot;title&quot;: &quot;中级任务&quot;,
     &quot;paperItems&quot;: [
         {
-            &quot;id&quot;: 20,  //试卷id
+            &quot;id&quot;: 61,  //试卷id
             &quot;name&quot;: &quot;中级任务一&quot;,  //试卷名称
             &quot;questionCount&quot;: 5,  //题目数量
             &quot;score&quot;: 180,  //试卷分数
@@ -527,12 +527,12 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 20,  //任务id
+        &quot;id&quot;: 61,  //任务id
         &quot;gradeLevel&quot;: 1,   //年级
         &quot;title&quot;: &quot;中级任务&quot;,  //任务标题
         &quot;paperItems&quot;: [
             {
-                &quot;id&quot;: 20,  //试卷id
+                &quot;id&quot;: 61,  //试卷id
                 &quot;name&quot;: &quot;中级任务一&quot;,  //试卷名称
                 &quot;questionCount&quot;: 5,  //题目数量
                 &quot;score&quot;: 180,  //试卷分数
@@ -562,7 +562,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 36,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,   //消息id
+                &quot;id&quot;: 61,   //消息id
                 &quot;title&quot;: &quot;你好，同学！&quot;,  //消息标题
                 &quot;content&quot;: &quot;考试请不要作弊&quot;,  //消息内容
                 &quot;sendUserName&quot;: &quot;admin&quot;,  //发送人用户名
@@ -598,7 +598,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 4,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,
+                &quot;id&quot;: 61,
                 &quot;createTime&quot;: &quot;2021-07-07 14:03:02&quot;,  //提交时间
                 &quot;userScore&quot;: &quot;16&quot;,  //用户得分
                 &quot;subjectName&quot;: &quot;语文&quot;,  //学科名称
@@ -629,7 +629,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
         &quot;total&quot;: 68,
         &quot;list&quot;: [
             {
-                &quot;id&quot;: 20,  //日志id
+                &quot;id&quot;: 61,  //日志id
                 &quot;userId&quot;: 2,  //用户id
                 &quot;userName&quot;: &quot;admin&quot;,  //用户名
                 &quot;realName&quot;: &quot;管理员&quot;, //真实姓名
@@ -643,7 +643,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;code&quot;: 1,
     &quot;message&quot;: &quot;成功&quot;,
     &quot;response&quot;: {
-        &quot;id&quot;: 20,
+        &quot;id&quot;: 61,
         &quot;userUuid&quot;: &quot;52045f5f-a13f-4ccc-93dd-f7ee8270ad4c&quot;, //用户uuid
         &quot;userName&quot;: &quot;admin&quot;,  //用户名
         &quot;realName&quot;: &quot;管理员&quot;, //真实姓名
@@ -661,7 +661,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     }
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-32-用户信息更新" tabindex="-1"><a class="header-anchor" href="#_4-3-32-用户信息更新" aria-hidden="true">#</a> 4.3.32 用户信息更新</h3><ul><li>接口地址：/api/admin/user/update</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 20,  //用户id
+    &quot;id&quot;: 61,  //用户id
     &quot;userUuid&quot;: &quot;52045f5f-a13f-4ccc-93dd-f7ee8270ad4c&quot;, //用户标识
     &quot;userName&quot;: &quot;admin&quot;, //用户名
     &quot;realName&quot;: &quot;管理员&quot;, //真实姓名
@@ -702,7 +702,7 @@ import{_ as e,o as i,c as n,e as u}from"./app.b8c1f797.js";const l={},d=u(`<h1 i
     &quot;state&quot;: &quot;SUCCESS&quot;
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-34-个人信息修改" tabindex="-1"><a class="header-anchor" href="#_4-3-34-个人信息修改" aria-hidden="true">#</a> 4.3.34 个人信息修改</h3><ul><li>接口地址：/api/admin/user/update</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
-    &quot;id&quot;: 20,
+    &quot;id&quot;: 61,
     &quot;userUuid&quot;: &quot;52045f5f-a13f-4ccc-93dd-f7ee8270ad4c&quot;,  //用户uuid
     &quot;userName&quot;: &quot;admin&quot;, //用户名
     &quot;realName&quot;: &quot;管理员&quot;, //真实姓名
