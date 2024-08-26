@@ -1,4 +1,4 @@
-import{_ as e,o as i,c as n,e as u}from"./app.469a2008.js";const l={},d=u(`<h1 id="_4-3-管理端" tabindex="-1"><a class="header-anchor" href="#_4-3-管理端" aria-hidden="true">#</a> 4.3 管理端</h1><h3 id="_4-3-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-3-1-登录" aria-hidden="true">#</a> 4.3.1 登录</h3><ul><li>接口地址：/api/user/login</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
+import{_ as e,o as i,c as n,e as u}from"./app.ced6c798.js";const l={},d=u(`<h1 id="_4-3-管理端" tabindex="-1"><a class="header-anchor" href="#_4-3-管理端" aria-hidden="true">#</a> 4.3 管理端</h1><h3 id="_4-3-1-登录" tabindex="-1"><a class="header-anchor" href="#_4-3-1-登录" aria-hidden="true">#</a> 4.3.1 登录</h3><ul><li>接口地址：/api/user/login</li><li>请求参数：</li></ul><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>{
     &quot;userName&quot;: &quot;admin&quot;,  //用户名
     &quot;password&quot;: &quot;&quot;,  //密码
     &quot;remember&quot;: false  //记住我
