@@ -72,12 +72,12 @@ public class UserController extends BaseApiController {
         UserResponseVM userVm = UserResponseVM.from(user);
         return RestResponse.ok(userVm);
     }
-
-
+//
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public RestResponse<User> edit(@RequestBody @Valid UserCreateVM model) {
         if (model.getId() == null) {  //create
-            User existUser = userService.getUserByUserName(model.getUserName());
+            //sql语句根据delete=0和userName查询第一条用户
+            User existUser = userService.getUserByUserName(model.getUserName());//从model获取一个userName
             if (null != existUser) {
                 return new RestResponse<>(2, "用户已存在");
             }
@@ -120,7 +120,7 @@ public class UserController extends BaseApiController {
         return RestResponse.ok();
     }
 
-
+    //
     @RequestMapping(value = "/changeStatus/{id}", method = RequestMethod.POST)
     public RestResponse<Integer> changeStatus(@PathVariable Integer id) {
         User user = userService.getUserById(id);
