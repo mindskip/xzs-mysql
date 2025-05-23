@@ -31,6 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,16 +79,24 @@ public class ExamPaperAnswerServiceImpl extends BaseServiceImpl<ExamPaperAnswer>
         List<ExamPaperTitleItemObject> examPaperTitleItemObjects = JsonUtil.toJsonListObject(frameTextContent, ExamPaperTitleItemObject.class);
         List<Integer> questionIds = examPaperTitleItemObjects.stream().flatMap(t -> t.getQuestionItems().stream().map(q -> q.getId())).collect(Collectors.toList());
         List<Question> questions = questionMapper.selectByIds(questionIds);
+        List<ExamPaperSubmitItemVM> copyAnswerItems = new ArrayList<>(examPaperSubmitVM.getAnswerItems());
         //将题目结构的转化为题目答案
         List<ExamPaperQuestionCustomerAnswer> examPaperQuestionCustomerAnswers = examPaperTitleItemObjects.stream()
                 .flatMap(t -> t.getQuestionItems().stream()
                         .map(q -> {
                             Question question = questions.stream().filter(tq -> tq.getId().equals(q.getId())).findFirst().get();
-                            ExamPaperSubmitItemVM customerQuestionAnswer = examPaperSubmitVM.getAnswerItems().stream()
-                                    .filter(tq -> tq.getQuestionId().equals(q.getId()))
-                                    .findFirst()
-                                    .orElse(null);
-                            return ExamPaperQuestionCustomerAnswerFromVM(question, customerQuestionAnswer, examPaper, q.getItemOrder(), user, now);
+                            
+                            Iterator<ExamPaperSubmitItemVM> answerIt = copyAnswerItems.iterator();
+                            while (answerIt.hasNext()) {
+                                ExamPaperSubmitItemVM customerQuestionAnswer = answerIt.next();
+                                if (!customerQuestionAnswer.getQuestionId().equals(q.getId())) {
+                                    continue;
+                                }
+                                answerIt.remove();
+                                return ExamPaperQuestionCustomerAnswerFromVM(question, customerQuestionAnswer, examPaper, q.getItemOrder(), user, now);
+                            }
+
+                            return null;
                         })
                 ).collect(Collectors.toList());
 
