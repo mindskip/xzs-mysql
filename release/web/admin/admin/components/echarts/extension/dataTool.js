@@ -36,7 +36,7 @@ var nativeMap = arrayProto.map;
 /**
  * Those data types can be cloned:
  *     Plain object, Array, TypedArray, number, string, null, undefined.
- * Those data types will be assgined using the orginal data:
+ * Those data types will be assigned using the original data:
  *     BUILTIN_OBJECT
  * Instance of user defined class will be cloned to a plain object, without
  * properties in prototype.
@@ -289,8 +289,8 @@ function map(obj, cb, context) {
 
 /**
  * @memberOf module:zrender/core/util
- * @param {string} str string to be trimed
- * @return {string} trimed string
+ * @param {string} str string to be trimmed
+ * @return {string} trimmed string
  */
 
 
@@ -538,11 +538,11 @@ var gexf = (Object.freeze || Object)({
 */
 
 /*
-* A third-party license is embeded for some of the code in this file:
+* A third-party license is embedded for some of the code in this file:
 * The method "quantile" was copied from "d3.js".
 * (See more details in the comment of the method below.)
 * The use of the source code of this file is also subject to the terms
-* and consitions of the license of "d3.js" (BSD-3Clause, see
+* and conditions of the license of "d3.js" (BSD-3Clause, see
 * </licenses/LICENSE-d3>).
 */
 
@@ -609,7 +609,7 @@ function asc(arr) {
 /**
  * Get a data of given precision, assuring the sum of percentages
  * in valueList is 1.
- * The largest remainer method is used.
+ * The largest remainder method is used.
  * https://en.wikipedia.org/wiki/Largest_remainder_method
  *
  * @param {Array.<number>} valueList a list of all data
@@ -646,7 +646,7 @@ function asc(arr) {
  *     + time zone: '2012-03-01T12:22:33Z', '2012-03-01T12:22:33+8000', '2012-03-01T12:22:33-05:00',
  *     all of which will be treated as local time if time zone is not specified
  *     (see <https://momentjs.com/>).
- *   + Or other string format, including (all of which will be treated as loacal time):
+ *   + Or other string format, including (all of which will be treated as local time):
  *     '2012', '2012-3-1', '2012/3/1', '2012/03/01',
  *     '2009/6/12 2:00', '2009/6/12 2:05:08', '2009/6/12 2:05:08.123'
  *   + a timestamp, which represent a time in UTC.
